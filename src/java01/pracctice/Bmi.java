@@ -1,3 +1,5 @@
+package java01.pracctice;
+
 import java.util.Scanner;
 
 public class Bmi {
