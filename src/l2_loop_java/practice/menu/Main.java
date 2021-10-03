@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         int choice;
         do {
-        Scanner input = new Scanner(System.in);
+            Scanner input = new Scanner(System.in);
             System.out.println("Menu");
             System.out.println("1. Draw the triangle");
             System.out.println("2. Draw the square");
@@ -23,7 +23,6 @@ public class Main {
                     System.out.println("***");
                     System.out.println("**");
                     System.out.println("*");
-                    break;
                 case 2:
                     System.out.println("Draw the square");
                     System.out.println("* * * * * *");
@@ -44,6 +43,6 @@ public class Main {
                 default:
                     System.out.println("No choice!");
             }
-        }while (choice!=0);
+        } while (choice != 0);
     }
 }
