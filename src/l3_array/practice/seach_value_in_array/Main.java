@@ -16,7 +16,8 @@ public class Main {
                 break;
             }
         }
-        if (!isExist)
+        if (!isExist) {
             System.out.println("Not found" + input_name + " in the list.");
+        }
     }
 }
