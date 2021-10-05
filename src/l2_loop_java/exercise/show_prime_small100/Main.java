@@ -1,17 +1,14 @@
 package l2_loop_java.exercise.show_prime_small100;
 
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int count = 0;
-        int n = 2;
-        for (;n < 100;) {
-            if (isPrimeNumber(n)) {
-                System.out.println(n);
-                count++;
+        int prime = 2;
+        for (;prime < 100;) {
+            if (isPrimeNumber(prime)) {
+                System.out.print(prime + " ");
             }
-            n++;
+            prime++;
         }
     }
     public static boolean isPrimeNumber(int number) {
