@@ -31,6 +31,5 @@ public class Main {
             number2[j] = number[j - 1];
         }
         System.out.print(Arrays.toString(number2));
-
     }
 }

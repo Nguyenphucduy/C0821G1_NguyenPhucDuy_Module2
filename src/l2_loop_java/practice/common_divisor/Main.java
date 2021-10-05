@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a;
-        int b;
+        int a,b;
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a: ");
         a = input.nextInt();
