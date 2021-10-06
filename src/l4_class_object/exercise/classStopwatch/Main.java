@@ -8,10 +8,10 @@ public class Main {
         for (int i = 0; i < 100000; i++) {
             arr[i] = ((int) (Math.random() * 99));
         }
-        LocalTime start = LocalTime.now();
+        LocalTime startTime1 = LocalTime.now();
         arr = selectionSort(arr);
-        LocalTime end = LocalTime.now();
-        StopWatch stopWatch1 = new StopWatch(start, end);
+        LocalTime endTime1 = LocalTime.now();
+        StopWatch stopWatch1 = new StopWatch(startTime1, endTime1);
 //        System.out.println("LocalTime(reset) is : "+ stopWatch1.getStartTime());
 //        System.out.println("LocalTime (relay) is : "+ stopWatch1.getEndTime());
         System.out.println("Elapsed Time is: " + stopWatch1.getElapsedTime() + " milisecond");
@@ -63,7 +63,7 @@ public class Main {
         }
 
         public int getElapsedTime() {
-            int miliSecond = (((endTime.getHour() - startTime.getHour()) * 3600) * 1000 + ((endTime.getMinute() - startTime.getMinute()) * 60) * 1000 + (endTime.getSecond() - startTime.getSecond()) * 1000);
+            int miliSecond =  (endTime.getSecond() - startTime.getSecond()) * 1000;
             return miliSecond;
         }
 
