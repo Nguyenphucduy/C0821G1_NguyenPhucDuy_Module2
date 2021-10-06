@@ -20,15 +20,19 @@ public class Main {
         int indexX = scanner.nextInt();
         int size2 = n + 1;
         int[] numberArray2 = new int[size2];
-        for (int i = 0; i <= numberArray.length; i++) {
-            numberArray2[i] = numberArray[i];
-            if (i == indexX) {
-                numberArray2[i] = x;
-                break;
+        if (indexX<0||indexX>numberArray2.length-1){
+            System.err.println("Index Wrong");
+        }else {
+            for (int i = 0; i <= numberArray.length; i++) {
+                numberArray2[i] = numberArray[i];
+                if (i == indexX) {
+                    numberArray2[i] = x;
+                    break;
+                }
             }
-        }
-        for (int j = indexX + 1; j <= numberArray.length; j++) {
-            numberArray2[j] = numberArray[j - 1];
+            for (int j = indexX + 1; j <= numberArray.length; j++) {
+                numberArray2[j] = numberArray[j - 1];
+            }
         }
         System.out.print(Arrays.toString(numberArray2));
     }

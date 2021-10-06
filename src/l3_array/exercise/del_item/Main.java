@@ -10,33 +10,45 @@ public class Main {
         int length = scanner.nextInt();
         int[] numberArr1 = new int[length];
         for (int i = 0; i < numberArr1.length; i++) {
-            System.out.print("Enter the item the " + (i + 1));
+            System.out.print("Enter the item the " + (i + 1) + ": ");
             numberArr1[i] = scanner.nextInt();
-            System.out.println(numberArr1[i]);
         }
         System.out.println("Enter the element to be deleted");
         int x = scanner.nextInt();
-        int delIndex;
-        int length2 = length + 1;
-        int[] numberArr2 = new int[length2];
+        int delIndex = 0;
 
-        for (int i = 0; i < numberArr1.length; i++) {
-            numberArr2[i] = numberArr1[i];
+        for (int i = 0; i < numberArr1.length - 1; i++) {
             if (numberArr1[i] == x) {
-                numberArr2[i] = numberArr1[i + 1];
+                numberArr1[i] = numberArr1[i + 1];
                 delIndex = i;
-                System.out.println("deleted element is : " + x + " with index is : " + delIndex);
-                break;
+                System.out.println(x+" is your want delete"+" with index is :" + delIndex);
             }
-            System.out.println("item is : " + numberArr2[i] + " with index is: " + i);
         }
-        for (int j = numberArr1.length - 1; j >= 0; j--) {
-            numberArr2[j] = numberArr1[j];
-            if (numberArr1[j] == x) {
-                break;
-            }
-            System.out.println("item is: " + numberArr2[j] + " with index is : " + j);
+        for (int j = delIndex; j < numberArr1.length - 1; j++) {
+            numberArr1[j] = numberArr1[j + 1];
         }
+        numberArr1[numberArr1.length - 1] = 0;
+        System.out.println(Arrays.toString(numberArr1));
+//        int index_del = -1;
+//        for (int index = 0; index < numberArr1.length; index++) {
+//            if (x == numberArr1[index]) {
+//                index_del = index;
+//                break;
+//            }
+//        }
+//​
+//        if (index_del != -1) { //da tim thay x
+//            //chuc nang xoa phan tu tai index pos ra khoi mang
+//            for(int index = index_del; index < numberArr1.length - 1; index++){ //index = 7
+//                numberArr1[index] = numberArr1[index + 1];
+//            }
+//            numberArr1[numberArr1.length - 1] = 0;
+//        } else {
+//            System.err.println("Not found x = " + x);
+//        }
+//​
+//        System.out.print(Arrays.toString(numberArr1));
 
     }
+
 }
