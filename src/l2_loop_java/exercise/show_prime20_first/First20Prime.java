@@ -1,8 +1,8 @@
-package l2_loop_java.exercise.show_Prime20_first;
+package l2_loop_java.exercise.show_prime20_first;
 
 import java.util.Scanner;
 
-public class ShowPrime20First {
+public class First20Prime {
     public static void main(String[] args) {
         int number;
         int count = 0;
