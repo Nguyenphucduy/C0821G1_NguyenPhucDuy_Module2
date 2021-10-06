@@ -7,25 +7,36 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the length array");
-        int n = scanner.nextInt();
-        int[] number = new int[n];
-        for (int i = 0; i < number.length; i++) {
+        int length = scanner.nextInt();
+        int[] numberArr1 = new int[length];
+        for (int i = 0; i < numberArr1.length; i++) {
             System.out.print("Enter the item the " + (i + 1));
-            number[i] = scanner.nextInt();
-            System.out.println(number[i]);
+            numberArr1[i] = scanner.nextInt();
+            System.out.println(numberArr1[i]);
         }
         System.out.println("Enter the element to be deleted");
         int x = scanner.nextInt();
         int delIndex;
-        for (int i  = 0; i < number.length; i++) {
-            if (number[i] != x) {
-                number[i] = number[i + 1];
+        int length2 = length + 1;
+        int[] numberArr2 = new int[length2];
+
+        for (int i = 0; i < numberArr1.length; i++) {
+            numberArr2[i] = numberArr1[i];
+            if (numberArr1[i] == x) {
+                numberArr2[i] = numberArr1[i + 1];
                 delIndex = i;
-                System.out.println("deleted element is" + x + " with index is : " + delIndex);
+                System.out.println("deleted element is : " + x + " with index is : " + delIndex);
+                break;
             }
+            System.out.println("item is : " + numberArr2[i] + " with index is: " + i);
         }
-//        for (int i = delIndex+1;i<number.length;i++){
-//            number[i]=number[i+1];
-//        }
+        for (int j = numberArr1.length - 1; j >= 0; j--) {
+            numberArr2[j] = numberArr1[j];
+            if (numberArr1[j] == x) {
+                break;
+            }
+            System.out.println("item is: " + numberArr2[j] + " with index is : " + j);
+        }
+
     }
 }

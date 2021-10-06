@@ -10,14 +10,14 @@ public class Main {
         row = scanner.nextInt();
         System.out.println("Enter the col in array");
         col = scanner.nextInt();
-        int[][] matrix = new int[row][col];
-        int max = matrix[0][0];
+        int[][] maTrix = new int[row][col];
+        int max = maTrix[0][0];
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
                 System.out.print("Enter the item the [" + i + ", " + j + "]: ");
-                matrix[i][j] = scanner.nextInt();
-                if (max<matrix[i][j]){
-                    max = matrix[i][j];
+                maTrix[i][j] = scanner.nextInt();
+                if (max<maTrix[i][j]){
+                    max = maTrix[i][j];
                 }
             }
         }

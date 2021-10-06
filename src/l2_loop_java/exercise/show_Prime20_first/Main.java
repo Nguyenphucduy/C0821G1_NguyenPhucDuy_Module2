@@ -6,16 +6,16 @@ public class Main {
     public static void main(String[] args) {
         int number;
         int count = 0;
-        int n = 2;
+        int prime = 2;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your number");
         number = scanner.nextInt();
         while (count < number) {
-            if (isPrimeNumber(n)) {
-                System.out.println(n);
+            if (isPrimeNumber(prime)) {
+                System.out.println(prime);
                 count++;
             }
-            n++;
+            prime++;
         }
     }
     public static boolean isPrimeNumber(int number) {

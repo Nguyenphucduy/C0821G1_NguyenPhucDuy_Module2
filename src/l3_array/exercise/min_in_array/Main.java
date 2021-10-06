@@ -7,16 +7,16 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the length array");
         int size = scanner.nextInt();
-        int[] number = new int[size];
-        for (int i = 0; i < number.length; i++) {
+        int[] numberArr = new int[size];
+        for (int i = 0; i < numberArr.length; i++) {
             System.out.print("Enter the item the " + (i + 1));
-            number[i] = scanner.nextInt();
-            System.out.println("The item array is : " + number[i] + " With index : " + i);
+            numberArr[i] = scanner.nextInt();
+            System.out.println("The item array is : " + numberArr[i] + " With index : " + i);
         }
-        int min = number[0];
-        for (int i = 0; i < number.length;i++){
-            if (number[i] < min) {
-                min = number[i];
+        int min = numberArr[0];
+        for (int i = 0; i < numberArr.length;i++){
+            if (numberArr[i] < min) {
+                min = numberArr[i];
             }
         }
         System.out.print("Min in array is : " + min);

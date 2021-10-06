@@ -51,22 +51,22 @@ public class Main {
                     System.out.println("Prints a right triangle, with left angles on the down-right");
                     for (int i = 0; i < height; i++){
                         for (int j = 5; j > i; j--){
-                            System.out.print(" ");; //Vẽ tam giác trống
+                            System.out.print(" ");
                         }
                         for (int k= 0; k <= i; k++){
-                            System.out.print("*");//Vẽ tam giác bằng *
+                            System.out.print("*");
                         }
-                        System.out.println();//XUống dòng khi vẽ xong 1 hàng
+                        System.out.println();
                     }
                     System.out.println("Prints a right triangle, with left angles on the top-right");
                     for (int i = 0; i < height; i++){
                         for (int j = 0; j <= i; j++){
-                            System.out.print(" ");; //Vẽ tam giác trống
+                            System.out.print(" ");
                         }
                         for (int k = height; k > i; k--){
-                            System.out.print("*");;//Vẽ tam giác bằng *
+                            System.out.print("*");
                         }
-                        System.out.println();; //XUống dòng khi vẽ xong 1 hàng
+                        System.out.println();
                     }
                     break;
                 case 3:
