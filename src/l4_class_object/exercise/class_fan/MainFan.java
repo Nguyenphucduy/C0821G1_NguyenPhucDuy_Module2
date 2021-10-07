@@ -2,16 +2,16 @@ package l4_class_object.exercise.class_fan;
 
 public class MainFan {
     public static void main(String[] args) {
-        Fan fan1 = new Fan(3,true,10,"yellow");
+        Fan fan1 = new Fan(Fan.MEDIUM,true,10,"yellow");
         System.out.println(fan1.toString());
-        Fan fan2 = new Fan(2,false,5,"blue");
+        Fan fan2 = new Fan(Fan.FAST,false,5,"blue");
         System.out.println(fan2.toString());
     }
 
     public static class Fan {
-        final int SLOW = 1;
-        final int MEDIUM = 2;
-        final int FAST = 3;
+        public static final int SLOW = 1;
+        public static final int MEDIUM = 2;// constant of class with static
+        public static final int FAST = 3;
         private int speed = SLOW;
         private boolean on = false;
         private double radius = 5;
@@ -20,23 +20,12 @@ public class MainFan {
         public Fan() {
         }
 
+
         public Fan(int speed, boolean on, double radius, String color) {
             this.speed = speed;
             this.on = on;
             this.radius = radius;
             this.color = color;
-        }
-
-        public int getSLOW() {
-            return SLOW;
-        }
-
-        public int getMEDIUM() {
-            return MEDIUM;
-        }
-
-        public int getFAST() {
-            return FAST;
         }
 
         public int getSpeed() {
