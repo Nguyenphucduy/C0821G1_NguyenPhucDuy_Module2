@@ -14,19 +14,11 @@ public class Circle {
         this.radius = r;
     }
 
-    private double getRadius() {//public->private
+    public double getRadius() {//public->private
         return this.radius;
     }
 
-    private double getArea() {////public->private:pham vi trong lop
+    public double getArea() {////public->private:pham vi trong lop
         return this.radius * this.radius * 3.14;
-    }
-
-    public static class TestCircle {
-        public static void main(String[] args) {
-            Circle circle = new Circle();
-            System.out.println("radius is: "+circle.getRadius());
-            System.out.println("Area is : "+circle.getArea());
-        }
     }
 }
