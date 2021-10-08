@@ -1,6 +1,6 @@
 package l6_inheritance.exercise;
 
-public class Cylinder extends Circle{
+public class Cylinder extends Circle {
     private double height;
 
     public Cylinder(double height,double radius, String color) {

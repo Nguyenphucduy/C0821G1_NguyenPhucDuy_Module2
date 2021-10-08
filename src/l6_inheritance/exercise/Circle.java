@@ -4,7 +4,7 @@ public class Circle {
     private double radius;
     private String color;
 
-    protected Circle(double radius, String color) {
+    public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
