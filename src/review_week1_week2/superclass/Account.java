@@ -1,5 +1,7 @@
 package review_week1_week2.superclass;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.Scanner;
 
 public class Account {
@@ -10,6 +12,10 @@ public class Account {
     Scanner scanner = new Scanner(System.in);
 
     public Account() {
+    }
+
+    public Account(long accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public Account(long accountNumber, String accountName) {
@@ -60,35 +66,58 @@ public class Account {
     public double addMoneyAccount() {
         double add;
 //        do {
-            System.out.print("Enter the amount you want to deposit:  ");
-            add = scanner.nextDouble();
+        System.out.print("Enter the amount you want to deposit:  ");
+        add = scanner.nextDouble();
 
-            if (add >= 0) {
-                this.accountMoney += add;
-                System.out.println("You have successfully deposited money into your account");
-            } else {
-                System.out.println("Invalid deposit amount!");
-            }
+        if (add >= 0) {
+            this.accountMoney += add;
+            System.out.println("You have successfully deposited money into your account");
+        } else {
+            System.out.println("Invalid deposit amount!");
+        }
 //        }while (add>=0);
         return this.accountMoney;
     }
-    public double withdrawMoneyAccount(){
+
+    public double withdrawMoneyAccount() {
         double withdraw;
         double withdrawalfee = 5;
         do {
             System.out.print("Enter the amount you want to deposit:  ");
             withdraw = scanner.nextDouble();
 
-            if (withdraw <= (this.accountMoney-withdrawalfee) ){
-                this.accountMoney -= withdraw+withdrawalfee;
+            if (withdraw <= (this.accountMoney - withdrawalfee)) {
+                this.accountMoney -= withdraw + withdrawalfee;
                 System.out.println("you have successfully withdrawn");
             } else {
                 System.out.println("Invalid deposit amount!");
             }
-        }while (withdraw>=(this.accountMoney-withdrawalfee));
+        } while (withdraw >= (this.accountMoney - withdrawalfee));
         return this.accountMoney;
     }
-    public double expire(){
-        return this.accountMoney*this.accountMoney*INTEREST;
+
+    public double expire() {
+        return this.accountMoney * this.accountMoney * INTEREST;
+    }
+
+    public double transfers() {
+        double transferMoney;
+        System.out.print("Enter the transfer money : ");
+        transferMoney = scanner.nextDouble();
+        if (transferMoney >= this.accountMoney) {
+            System.out.print("Enter the account number : ");
+            Long accountNumber = scanner.nextLong();
+            Account account1 = new Account(accountNumber);
+            System.out.print("Enter the account number need transfers : ");
+            Long accountNumber2 = scanner.nextLong();
+            Account account2 = new Account(accountNumber);
+            account1.accountMoney = this.accountMoney - transferMoney;
+            account2.accountMoney = this.accountMoney + transferMoney;
+            System.out.println("Account money of   " + accountNumber + " is : " + account1.accountMoney);
+            System.out.println("Account money of  " + accountNumber2 + " is : " + account2.accountMoney);
+        } else {
+            System.out.println("Invalid deposit amount!");
+        }
+        return this.accountMoney;
     }
 }
