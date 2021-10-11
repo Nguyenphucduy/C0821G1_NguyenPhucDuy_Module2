@@ -18,11 +18,11 @@ public class AccountTest {
             System.out.println("5. Transfers");
             System.out.println("6. Exit");
             System.out.print("Enter your choose: ");
-            choose = scanner.nextInt();
+            choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
                 case 1:
                     System.out.print("Enter the account number : ");
-                    Long accountNumber = scanner.nextLong();
+                    Long accountNumber = Long.parseLong(scanner.nextLine());
                     System.out.print("Enter the account name: ");
                     String accountName = scanner.nextLine();
                     System.out.print("Enter the accountMoney : ");

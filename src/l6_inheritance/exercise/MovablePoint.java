@@ -5,6 +5,7 @@ public class MovablePoint extends Point {
     private float ySpeed=0.0f;
 
     public MovablePoint(float xSpeed, float ySpeed) {
+        super(); // call constructor ko tham so of superclass
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
     }
@@ -16,6 +17,7 @@ public class MovablePoint extends Point {
     }
 
     public MovablePoint() {
+        super();
     }
 
     public float getXSpeed() {
@@ -34,7 +36,7 @@ public class MovablePoint extends Point {
         this.ySpeed = ySpeed;
     }
     public float[] getSpeed(){
-        float[] arr = {xSpeed,ySpeed};
+        float[] arr = {this.xSpeed,this.ySpeed};
         return arr;
     }
     public void setSpeed(float xSpeed,float ySpeed){
