@@ -1,8 +1,9 @@
 package l7_abstract_class_and_interface.exercise.interface_resizeable.model;
 
-import l7_abstract_class_and_interface.exercise.interface_resizeable.service.Shape;
+import l7_abstract_class_and_interface.exercise.interface_resizeable.service.Resizeable;
+import l7_abstract_class_and_interface.practice.interface_comparable.model.Shape;
 
-public class Rectangle extends Shape {
+public class Rectangle extends Shape implements Resizeable {
     private double width = 1.0;
     private double length = 1.0;
 
@@ -57,7 +58,7 @@ public class Rectangle extends Shape {
     }
     @Override
     public void resize(double percent) {
-        this.length *= (percent / 99);
-        this.width += (percent / 99);
+        this.length *= (percent / 100);
+        this.width += (percent / 100);
     }
 }

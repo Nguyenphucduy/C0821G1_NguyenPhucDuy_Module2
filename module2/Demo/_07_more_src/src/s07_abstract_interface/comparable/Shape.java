@@ -1,6 +1,6 @@
-package l7_abstract_class_and_interface.exercise.interface_resizeable.service;
+package s07_abstract_interface.comparable;
 
-public abstract class Shape implements Resizeable {
+public class Shape{
     private String color = "green";
     private boolean filled = true;
 
@@ -34,16 +34,5 @@ public abstract class Shape implements Resizeable {
                 + getColor()
                 + " and "
                 + (isFilled() ? "filled" : "not filled");
-    }
-
-//    @Override
-//    public void resize(double percent)
-//
-//    }
-
-    public static void printShape(Shape[] shape) {
-        for (Shape x : shape) {
-            System.out.println(x.toString());
-        }
     }
 }

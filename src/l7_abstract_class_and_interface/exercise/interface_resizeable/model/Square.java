@@ -1,8 +1,9 @@
 package l7_abstract_class_and_interface.exercise.interface_resizeable.model;
 
-import l7_abstract_class_and_interface.exercise.interface_resizeable.service.Shape;
+import l7_abstract_class_and_interface.exercise.interface_resizeable.service.Resizeable;
+import l7_abstract_class_and_interface.practice.interface_comparable.model.Shape;
 
-public class Square extends Shape {
+public class Square extends Shape implements Resizeable {
 
     private double side;
 
@@ -42,6 +43,6 @@ public class Square extends Shape {
 
     @Override
     public void resize(double percent) {
-        this.side *= (percent / 99);
+        this.side *= (percent / 100);
     }
 }

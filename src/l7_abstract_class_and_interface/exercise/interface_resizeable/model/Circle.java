@@ -1,8 +1,9 @@
 package l7_abstract_class_and_interface.exercise.interface_resizeable.model;
 
-import l7_abstract_class_and_interface.exercise.interface_resizeable.service.Shape;
+import l7_abstract_class_and_interface.exercise.interface_resizeable.service.Resizeable;
+import l7_abstract_class_and_interface.practice.interface_comparable.model.Shape;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Resizeable {
     private double radius = 1.0;
 
     public Circle() {
@@ -45,6 +46,6 @@ public class Circle extends Shape {
 
     @Override
     public void resize(double percent) {
-        this.radius *= (percent / 99);
+        this.radius *= (percent / 100);
     }
 }
