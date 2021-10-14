@@ -1,25 +1,43 @@
 package l8_clean_code.exercise.refactoring.model;
 
 public class TennisGame {
+    /**
+     * thay giá trị "thần kì" = constant
+     */
 
     public static final int SCOREZERO = 0;
     public static final int SCOREONE = 1;
     public static final int SCORETWO = 2;
     public static final int SCORETHREE = 3;
-    // method lấy kết quả game
 
+    /**
+     * Phương thức lấy kết quả Game
+     *
+     * @param player1Name
+     * @param player2Name
+     * @param player1Score
+     * @param player2Score
+     * @return
+     */
     public static String getResultGame(String player1Name, String player2Name, int player1Score, int player2Score) {
         boolean isDeuce = player1Score == player2Score;
         boolean isOver = player1Score >= 4 || player2Score >= 4;
         if (isDeuce) {
             return getScore(player1Score);
         } else if (isOver) {
-            return getResultScore(player1Score, player2Score);
+            return calculatorScore(player1Score, player2Score);
         } else {
             return getTempScore(player1Score, player2Score);
         }
     }
-//method lấy điểm
+
+    /**
+     * Phương thức lấy Score
+     *
+     * @param score
+     * @return
+     */
+
     public static String getScore(int score) {
         switch (score) {
             case SCOREZERO:
@@ -34,8 +52,16 @@ public class TennisGame {
                 return "Deuce";
         }
     }
-// method lấy kết quả điểm
-    public static String getResultScore(int player1Score, int player2Score) {
+
+    /**
+     * Phương thức tính toán Score
+     *
+     * @param player1Score
+     * @param player2Score
+     * @return
+     */
+
+    public static String calculatorScore(int player1Score, int player2Score) {
         int resultScore = player1Score - player2Score;
         if (resultScore == 1) {
             return "Advantage player1";
@@ -49,7 +75,14 @@ public class TennisGame {
             return "Win for player2";
         }
     }
-// method đổi điểm
+
+    /**
+     * Phương thức thay đổi Score
+     *
+     * @param player1Score
+     * @param player2Score
+     * @return
+     */
     public static Integer changeTempScore(int player1Score, int player2Score) {
         int tempScore = 0;
         for (int i = 1; i < 3; i++) {
@@ -61,9 +94,16 @@ public class TennisGame {
         }
         return tempScore;
     }
-    //method lấy điểm sau khi đã đổi điểm
-    public static String getTempScore(int player1Score,int player2Score){
-        int tempScore = changeTempScore(player1Score,player2Score);
+
+    /**
+     * Phương thức lấy Score sau khi đã thay đổi
+     *
+     * @param player1Score
+     * @param player2Score
+     * @return
+     */
+    public static String getTempScore(int player1Score, int player2Score) {
+        int tempScore = changeTempScore(player1Score, player2Score);
         String score = "";
         switch (tempScore) {
             case SCOREZERO:
@@ -77,4 +117,12 @@ public class TennisGame {
         }
         return score;
     }
+
+    /**
+     * constructor không tham số
+     */
+
+    public TennisGame() {
+    }
+
 }
