@@ -218,4 +218,52 @@ public class MyLinkedList<E> {
         }
         return -1;
     }
+
+    /**
+     * Phương thức lấy về giá trị phần tử đầu tiên
+     *
+     * @return
+     */
+    public Object getFirst() {
+        return head.data;
+    }
+
+    /**
+     * Phương thức lấy về giá trị phần tử cuối cùng
+     *
+     * @return
+     */
+    public Object getLast() {
+        Node temp = head;
+        for (int i = 0; i < numNodes - 1 && temp.next != null; i++) {
+            temp = temp.next;
+        }
+        return temp.data;
+    }
+
+    /**
+     * Phương thức xóa MyLinkedList
+     */
+
+    public void clear() {
+        Node temp = head;
+        head = null;
+        while (temp.next != null) {
+            temp.next = null;
+        }
+//        temp.next=null;
+//        temp.data=null;
+        numNodes = 0;
+    }
+
+    /**
+     * Phương thức in danh sách phần tử MyLinkedList
+     */
+    public void printList() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+    }
 }

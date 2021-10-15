@@ -5,7 +5,7 @@ import l9_dsa_list.exercise.method_linkedlist.model.MyLinkedList;
 
 public class MyLinkedListTest {
     public static void main(String[] args) {
-        class Student{
+        class Student {
             private int id;
             private String name;
 
@@ -35,23 +35,23 @@ public class MyLinkedListTest {
             }
         }
         MyLinkedList<Student> myLinkedList = new MyLinkedList<>();
-        Student student1 = new Student(1,"Bob1");
-        Student student2 = new Student(2,"Bob2");
-        Student student3 = new Student(3,"Bob3");
-        Student student4 = new Student(4,"Bob4");
-        Student student5 = new Student(5,"Bob5");
-        Student student6 = new Student(6,"Bob6");
+        Student student1 = new Student(1, "Bob1");
+        Student student2 = new Student(2, "Bob2");
+        Student student3 = new Student(3, "Bob3");
+        Student student4 = new Student(4, "Bob4");
+        Student student5 = new Student(5, "Bob5");
+        Student student6 = new Student(6, "Bob6");
 
         myLinkedList.addFirst(student1);
         myLinkedList.addFirst(student2);
-//        myLinkedList.addLast(student3);
         myLinkedList.addFirst(student4);
         myLinkedList.addFirst(student5);
+        myLinkedList.addLast(student3);
 //        myLinkedList.add(2,student4);
 //        myLinkedList.remove(3);
 //        myLinkedList.remove(student5);
 //        System.out.println(myLinkedList.constrains(student6));
-        System.out.println(myLinkedList.indexOf(student6));
+//        System.out.println(myLinkedList.indexOf(student6));
 //        MyLinkedList<Student> cloneLinkedList = myLinkedList.clone();
 //        for (int i = 0; i < cloneLinkedList.size();i++){
 //            Student student = (Student) cloneLinkedList.get(i);
@@ -62,5 +62,15 @@ public class MyLinkedListTest {
 //            Student student = (Student) myLinkedList.get(i);
 //            System.out.println(student.getName());
 //        }
+
+//        myLinkedList.printList();
+        myLinkedList.clear();
+        myLinkedList.printList();
+//        Student student = (Student) myLinkedList.getFirst();
+//        System.out.println(student.getName());
+//        Student student = (Student) myLinkedList.getLast();
+//        System.out.println(student.getName());
+
+
     }
 }
