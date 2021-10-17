@@ -2,24 +2,21 @@ package review.review_week_3.abc_school_manage_student.controller;
 
 
 import review.review_week_3.abc_school_manage_student.model.Student;
-import review.review_week_3.abc_school_manage_student.model.StudentArrayList;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 public class StudentArrayListTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        StudentArrayList<Student> arrayListStudent = new StudentArrayList<Student>();
+        ArrayList<Student> listStudent = new ArrayList<Student>();
 
         Student student2 = new Student("Bob2", 2, "Ha Noi", 10);
-        Student student3 = new Student("Bob3", 3, "Ha Noi", 10);
-        arrayListStudent.listAdd(student2);
-//        arrayListStudent.listAdd(student3);
-        int choose, quantity;
+        Student student3 = new Student("Bob3", 3, "Ha Noi", 9);
+        listStudent.add(student3);
+        listStudent.add(student2);
+        int choose;
         do {
             System.out.println(" (Student Management) Please choose function : ");
             System.out.println("1. Add student");
@@ -33,51 +30,62 @@ public class StudentArrayListTest {
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
 
-                case 1: {
-                    do {
-                        System.out.print("Enter the quantity you want add : ");
-                        quantity = Integer.parseInt(scanner.nextLine());
-                        if (quantity > 0) {
-                            for (int i = 0; i < quantity; i++) {
-                                System.out.println("Enter the information student : name,id,address,point");
-                                System.out.print("Enter the name : ");
-                                String name = scanner.nextLine();
-                                System.out.print("Enter the id : ");
-                                int id = Integer.parseInt(scanner.nextLine());
-                                System.out.print("Enter the address : ");
-                                String address = scanner.nextLine();
-                                System.out.print("Enter the point : ");
-                                int point = Integer.parseInt(scanner.nextLine());
+                case 1:
+                    System.out.println("Enter the information student : name,id,address,point");
+                    System.out.print("Enter the name : ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter the id : ");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    System.out.print("Enter the address : ");
+                    String address = scanner.nextLine();
+                    System.out.print("Enter the point : ");
+                    int point = Integer.parseInt(scanner.nextLine());
 
-                                Student student = new Student(name, id, address, point);
-                                arrayListStudent.listAdd(student);
-                            }
-                        }
-                    } while (quantity <= 0);
+                    Student student = new Student(name, id, address, point);
+                    listStudent.add(student);
+
                     break;
-                }
+
                 case 2: {
                     int index;
                     System.out.print("Enter the index you want edit : ");
+                    index = Integer.parseInt(scanner.nextLine());
+                    if (index >= 0 && index <= listStudent.size()) {
+                        listStudent.remove(index);
+                        System.out.println("Enter the information you want to edit");
+                        System.out.print("Enter the name edit : ");
+                        String nameFix = scanner.nextLine();
+                        System.out.print("Enter the id edit: ");
+                        int idFix = Integer.parseInt(scanner.nextLine());
+                        System.out.print("Enter the address edit: ");
+                        String addressFix = scanner.nextLine();
+                        System.out.print("Enter the point edit: ");
+                        int pointFix = Integer.parseInt(scanner.nextLine());
+                        Student studentFix = new Student(nameFix, idFix, addressFix, pointFix);
+                        listStudent.add(index, studentFix);
+                        System.out.println("Your information is changed to");
 
-                    break;
+                        break;
+                    }
                 }
                 case 3:
                     System.out.print("Enter the index you want remove : ");
-                    int index = Integer.parseInt(scanner.nextLine());
-                    arrayListStudent.remove(index);
+                    int indexRemove = Integer.parseInt(scanner.nextLine());
+                    listStudent.remove(indexRemove);
                     break;
 
                 case 4:
-                    System.out.println("not done");
+                    System.out.println("Enter the student id you want to check");
+                    int idCheck = Integer.parseInt(scanner.nextLine());
                     break;
 
                 case 5:
-                    arrayListStudent.listPrint();
+                    System.out.println("Array List of your : ");
+                    System.out.println(listStudent);
                     break;
 
                 case 6:
-                    System.out.println("not done 2");
+//                    listStudent.sort();
                     break;
 
                 case 7:
@@ -85,7 +93,8 @@ public class StudentArrayListTest {
                 default:
                     System.out.println("No choice!");
             }
-        } while (choose != 7);
+        }
+        while (choose != 7);
 
 
     }

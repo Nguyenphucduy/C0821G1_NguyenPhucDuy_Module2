@@ -2,7 +2,7 @@ package review.review_week_3.abc_school_manage_student.model;
 
 import java.util.Comparator;
 
-public class Student implements Comparable<Student> {
+public class Student implements Comparator<Student> {
     private String name;
     private int id;
     private String address;
@@ -16,6 +16,10 @@ public class Student implements Comparable<Student> {
         this.id = id;
         this.address = address;
         this.point = point;
+    }
+
+    public Student(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -58,11 +62,11 @@ public class Student implements Comparable<Student> {
     }
 
 
+
+
+
     @Override
-    public int compareTo(Student o) {
-        return this.point - getPoint();
+    public int compare(Student o1, Student o2) {
+        return o1.getPoint() - o2.getPoint();
     }
-
-
-
 }
