@@ -64,10 +64,13 @@ public class MyLinkedListTest {
 //        }
 
 //        myLinkedList.printList();
-        myLinkedList.clear();
-        myLinkedList.printList();
-//        Student student = (Student) myLinkedList.getFirst();
-//        System.out.println(student.getName());
+//        myLinkedList.clear();
+//        myLinkedList.printList();
+        /**
+         *  ép myLinkedList<Object> (từ thằng Object  xuống thằng Student) ->  myLinkedList<Student>
+         */
+        Student student = (Student) myLinkedList.getFirst();
+        System.out.println(student.getName());
 //        Student student = (Student) myLinkedList.getLast();
 //        System.out.println(student.getName());
 

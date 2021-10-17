@@ -1,6 +1,4 @@
-package review_week1_week2.superclass;
-
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+package review.review_week1_week2.manage_bank.superclass;
 
 import java.util.Scanner;
 

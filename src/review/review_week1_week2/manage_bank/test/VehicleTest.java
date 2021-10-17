@@ -1,6 +1,6 @@
-package review_week1_week2.test;
+package review.review_week1_week2.manage_bank.test;
 
-import review_week1_week2.superclass.Vehicle;
+import review.review_week1_week2.manage_bank.superclass.Vehicle;
 
 import java.util.Scanner;
 

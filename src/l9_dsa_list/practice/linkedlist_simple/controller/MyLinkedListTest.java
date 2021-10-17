@@ -2,6 +2,8 @@ package l9_dsa_list.practice.linkedlist_simple.controller;
 
 import l9_dsa_list.practice.linkedlist_simple.model.MyLinkedList;
 
+import javax.xml.soap.Node;
+
 public class MyLinkedListTest {
     public static void main(String[] args) {
         System.out.println("/=/=/=/= TESTING /=/=/=/=");
@@ -11,7 +13,6 @@ public class MyLinkedListTest {
         linkedList.addFirst(13);
 
         linkedList.add(4,9);
-        linkedList.add(4,9);
-        linkedList.printList();
+//        linkedList.printList();
     }
 }

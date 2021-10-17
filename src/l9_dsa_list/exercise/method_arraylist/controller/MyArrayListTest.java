@@ -47,7 +47,7 @@ public class MyArrayListTest {
         studentMyArrayList.add(d);
         studentMyArrayList.add(e);
         studentMyArrayList.add(f,2);
-        studentMyArrayList.clear();
+//        studentMyArrayList.clear();
         studentMyArrayList.size();
 //        System.out.println(studentMyArrayList.size());
 //        System.out.println(studentMyArrayList.get(3).getName());
@@ -60,10 +60,10 @@ public class MyArrayListTest {
 //            System.out.println(student.getId());
 //            System.out.println(student.getName());
 //        }
-        newMyArrayList = studentMyArrayList.clone();
+//        newMyArrayList = studentMyArrayList.clone();
 //        newMyArrayList.remove(3);
-        Student student = newMyArrayList.remove(3);
-        System.out.println(student.getName());
+//        Student student = newMyArrayList.remove(3);
+//        System.out.println(student.getName());
 //
 //        for (int i = 0; i < newMyArrayList.size();i++){
 //            System.out.println(newMyArrayList.get(i).getName());
