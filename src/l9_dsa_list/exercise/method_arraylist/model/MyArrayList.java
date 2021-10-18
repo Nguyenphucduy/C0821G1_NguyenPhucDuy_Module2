@@ -60,6 +60,12 @@ public class MyArrayList<E> {
         return true;
     }
 
+    /**
+     * Phương thức add 1 phần tử bằng index
+     * @param element
+     * @param index
+     */
+
     public void add(E element, int index) {
         if (index > elements.length) {
             throw new IllegalArgumentException("index : " + index);

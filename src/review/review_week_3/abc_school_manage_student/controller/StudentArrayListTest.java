@@ -4,6 +4,7 @@ package review.review_week_3.abc_school_manage_student.controller;
 import review.review_week_3.abc_school_manage_student.model.Student;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 
@@ -12,8 +13,8 @@ public class StudentArrayListTest {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Student> listStudent = new ArrayList<Student>();
 
-        Student student2 = new Student("Bob2", 2, "Ha Noi", 10);
-        Student student3 = new Student("Bob3", 3, "Ha Noi", 9);
+        Student student2 = new Student("Bob2", 2, "Ha Noi", 9);
+        Student student3 = new Student("Bob3", 3, "Ha Noi", 10);
         listStudent.add(student3);
         listStudent.add(student2);
         int choose;
@@ -23,9 +24,10 @@ public class StudentArrayListTest {
             System.out.println("2. Edit student in Array List");
             System.out.println("3. Remove student in Array List");
             System.out.println("4. Check id student in Array List");
-            System.out.println("5. Display information student in Array List ");
-            System.out.println("6. Sort student with point ");
-            System.out.println("7. OUT ");
+            System.out.println("5. Please enter student id to display student information");
+            System.out.println("6. Display information student in Array List ");
+            System.out.println("7. Sort student with point ");
+            System.out.println("8. OUT ");
             System.out.print("Enter choose : ");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -77,24 +79,29 @@ public class StudentArrayListTest {
                 case 4:
                     System.out.println("Enter the student id you want to check");
                     int idCheck = Integer.parseInt(scanner.nextLine());
+//                    listStudent.indexOf();
+                    //block
                     break;
-
                 case 5:
+                    break;
+                    //block
+
+                case 6:
                     System.out.println("Array List of your : ");
                     System.out.println(listStudent);
                     break;
 
-                case 6:
-//                    listStudent.sort();
+                case 7:
+                    listStudent.sort(Comparator.comparingInt(Student::getPoint));
                     break;
 
-                case 7:
-                    System.exit(7);
+                case 8:
+                    System.exit(8);
                 default:
                     System.out.println("No choice!");
             }
         }
-        while (choose != 7);
+        while (choose != 8);
 
 
     }
