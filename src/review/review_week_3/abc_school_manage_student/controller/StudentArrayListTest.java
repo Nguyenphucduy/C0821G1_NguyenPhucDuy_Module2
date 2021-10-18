@@ -23,11 +23,10 @@ public class StudentArrayListTest {
             System.out.println("1. Add student");
             System.out.println("2. Edit student in Array List");
             System.out.println("3. Remove student in Array List");
-            System.out.println("4. Check id student in Array List");
-            System.out.println("5. Please enter student id to display student information");
-            System.out.println("6. Display information student in Array List ");
-            System.out.println("7. Sort student with point ");
-            System.out.println("8. OUT ");
+            System.out.println("4. Check id student in Array List and display student information ");
+            System.out.println("5. Display information student in Array List ");
+            System.out.println("6. Sort student with point ");
+            System.out.println("7. OUT ");
             System.out.print("Enter choose : ");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -77,31 +76,40 @@ public class StudentArrayListTest {
                     break;
 
                 case 4:
-                    System.out.println("Enter the student id you want to check");
+                    System.out.print("Enter the student id you want to check : ");
                     int idCheck = Integer.parseInt(scanner.nextLine());
-//                    listStudent.indexOf();
-                    //block
+                    boolean check = false;
+                    for (int i = 0 ; i < listStudent.size() ; i++){
+                        if (idCheck==listStudent.get(i).getId()){
+                            idCheck = i;
+                            check = true;
+                        }else {
+                            check = false;
+                        }
+                    }
+                    if (check) {
+                        System.out.println(" Have students with your id in the Array list is : " + listStudent.get(idCheck));
+                    }else {
+                        System.err.println("your id was not found in the array list");
+                    }
+
                     break;
                 case 5:
-                    break;
-                    //block
-
-                case 6:
                     System.out.println("Array List of your : ");
                     System.out.println(listStudent);
                     break;
 
-                case 7:
+                case 6:
                     listStudent.sort(Comparator.comparingInt(Student::getPoint));
                     break;
 
-                case 8:
-                    System.exit(8);
+                case 7:
+                    System.exit(7);
                 default:
                     System.out.println("No choice!");
             }
         }
-        while (choose != 8);
+        while (choose != 7);
 
 
     }
