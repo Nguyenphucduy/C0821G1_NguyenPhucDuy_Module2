@@ -3,69 +3,68 @@ package l10_dsa_stack_and_queue.exercise.circular_linkedlist_implements_queue.mo
 public class Solution {
     /**
      * Phyơng thức chèn 1 phần tử
-     * @param q
+     *
+     * @param queue
      * @param value
      */
-    public void enQueue(Queue  q, int value) {
+    public void enQueue(Queue queue, int value) {
 
-        Node  temp = new Node();
-        temp .data = value;
-        if (q .front ==  null)
-            q .front = temp;
+        Node temp = new Node(); // tạo node mới tham chiếu giá trị tới temp
+        temp.data = value; //  gán giá trị vào temp
+        if (queue.front == null)//Kiểm tra hàng đợi trống hay không.
+            queue.front = queue.rear = temp;
         else
-            q .rear .link = temp;
+            queue.rear.link = temp; //node rear luôn chứa địa chỉ của node front: .link
 
-        q .rear = temp;
-        q .rear .link = q .front;
+        queue.rear = temp;
+        queue.rear.link = queue.front; // tạo liên kết
 
     }
 
     /**
-     * method xóa phần tử ở hàng đợi
-     * @param q
+     * method  thực hiện lấy ra 1 phần tử và xóa.Trong hàng đợi liên kết vòng, luôn lấy ra vị trị Front.
+     *
+     * @param queue
      * @return
      */
-    public int deQueue(Queue  q) {
-        if (q .front ==  null)
+    public int deQueue(Queue queue) {
+        if (queue.front == null)// Kiểm tra hàng đợi trống hay không
         {
-            System.out.printf ("Queue is empty");
-            return Integer.MIN_VALUE;
+            System.out.print("Queue is empty");
+            return Integer.MIN_VALUE; // MIN_VALUE  constant of class Interger
         }
 
-        // If this is the last node to be deleted
         int value; // Value to be dequeued
-        if (q .front == q .rear)
-        {
-            value = q .front .data;
-            q .front =  null;
-            q .rear =  null;
-        }
-        else  // There are more than one nodes
-        {
-            Node  temp = q .front;
-            value = temp .data;
-            q .front = q .front .link;
-            q .rear .link= q .front;
+        if (queue.front == queue.rear) {
+            value = queue.front.data;
+            queue.front = queue.rear = null;
+        } else {
+            /**
+             * tạo liên kết vòng
+             */
+            Node temp = queue.front;
+            value = temp.data;
+            queue.front = queue.front.link;
+            queue.rear.link = queue.front;
         }
 
-        return value ;
+        return value;
 
     }
 
     /**
      * method hiển thị phần tử
-     * @param q
+     *
+     * @param queue
      */
-    public void displayQueue(Queue  q) {
-        Node  temp = q .front;
-        System.out.print(" Elements in Circular Queue are: ");
-        while (temp .link != q .front)
-        {
-            System.out.printf("%d ", temp .data);
-            temp = temp .link;
+    public void displayQueue(Queue queue) {
+        Node temp = queue.front;
+        System.out.print(" Elements in Circular Queue are : ");
+        while (temp.link != queue.front) {
+            System.out.printf("%d ", temp.data);
+            temp = temp.link;
         }
-        System.out.printf("%d", temp .data);
-
+        System.out.printf("%d", temp.data);
     }
 
 }

@@ -5,29 +5,29 @@ import l10_dsa_stack_and_queue.exercise.circular_linkedlist_implements_queue.mod
 
 public class SolutionTest {
     public static void main(String[] args) {
-        // Create a queue and initialize front and rear
+        // Create a queue and initialize front and rear(tạo Queue mới và phần tử đầu tiên và cuối cùng)
         Solution solution = new Solution();
-        Queue q = new Queue();
-        q.front = q.rear = null;
+        Queue queue = new Queue();
+        queue.front = queue.rear = null;
 
-        // Inserting elements in Circular Queue
-        solution.enQueue(q, 14);
-        solution.enQueue(q, 22);
-        solution.enQueue(q, 6);
+        // add elements in Circular Queue
+        solution.enQueue(queue, 14);
+        solution.enQueue(queue, 22);
+        solution.enQueue(queue, 6);
 
         // Display elements present in Circular Queue
-        solution.displayQueue(q);
+        solution.displayQueue(queue);
 
         // Deleting elements from Circular Queue
-        System.out.printf(" Deleted value = %d", solution.deQueue(q));
-        System.out.printf(" Deleted value = %d", solution.deQueue(q));
+        System.out.printf(" Deleted value = %d", solution.deQueue(queue));
+        System.out.printf(" Deleted value = %d", solution.deQueue(queue));
 
         // Remaining elements in Circular Queue
-        solution.displayQueue(q);
+        solution.displayQueue(queue);
 
-        solution.enQueue(q, 9);
-        solution.enQueue(q, 20);
-        solution.displayQueue(q);
+//        solution.enQueue(queue, 9);
+//        solution.enQueue(queue, 20);
+//        solution.displayQueue(queue);
 
     }
 }
