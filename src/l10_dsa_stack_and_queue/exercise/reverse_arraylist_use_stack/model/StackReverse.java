@@ -1,5 +1,6 @@
 package l10_dsa_stack_and_queue.exercise.reverse_arraylist_use_stack.model;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class StackReverse {
@@ -20,7 +21,19 @@ public class StackReverse {
         }
         return reverse;
     }
-    public void stackOfString(StringBuffer string){
+    public void stackOfString(String string){
+//        Stack<Character> stack = new Stack<>();
+        Stack<String> stack = new Stack<>();
+
+        int i;
+        String reverse = "";
+        for (i = 0; i < string.length(); i++)
+            stack.push(string.charAt(i) + "" );// int - > + "" -> string
+
+        while (!stack.isEmpty()){
+          reverse+= stack.pop();
+        }
+        System.out.println(reverse);
 
     }
 }
