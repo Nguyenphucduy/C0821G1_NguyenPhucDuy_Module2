@@ -15,8 +15,8 @@ public class StudentArrayListTest {
 
         Student student2 = new Student("Bob2", 2, "Ha Noi", 9);
         Student student3 = new Student("Bob3", 3, "Ha Noi", 10);
-//        listStudent.add(student3);
-//        listStudent.add(student2);
+        listStudent.add(student3);
+        listStudent.add(student2);
         int choose;
         do {
             System.out.println(" (Student Management) Please choose function : ");
