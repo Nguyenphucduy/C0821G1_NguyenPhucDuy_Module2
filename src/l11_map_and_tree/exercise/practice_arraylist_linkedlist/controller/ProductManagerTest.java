@@ -47,12 +47,20 @@ public class ProductManagerTest {
 //
 //        System.out.println("-----------------------");
 //        System.out.println(productManager.getProductList());
-//        System.out.println("Enter the name product");
+//        System.out.print("Enter the name product");
 //        String getName = scanner.nextLine();
 //        System.out.println(productManager.getProductInfo(getName));
-//        System.out.println("Enter the id product : ");
+//        System.out.println("input id product");
+//        int id = 1;
+//        System.out.println(productManager.isExist(new Product(id)));
+//        System.out.print("Enter the id product : ");
 //        int getId = Integer.parseInt(scanner.nextLine());
-//        System.out.println(productManager.getProductInfo(getId));
-        productManager.sort();
+//        Product product1 = productManager.getProductInfo(getId);
+//        if (product1 == null){
+//            System.out.println("id not found");
+//        }else {
+//            System.out.println(product1);
+//        }
+//        productManager.sort();
     }
 }

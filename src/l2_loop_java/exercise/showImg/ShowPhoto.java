@@ -6,23 +6,23 @@ public class ShowPhoto {
     public static void main(String[] args) {
         int choice;
         do {
-            Scanner input = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Menu");
             System.out.println("1. Print the rectangle");
             System.out.println("2. Print the square triangle (The corner is square at 4 different angles: top-left, top-right, botton-left, botton-right)");
             System.out.println("3. Print isosceles triangle");
             System.out.println("4. Exit");
             System.out.println("Enter your choice: ");
-            choice = input.nextInt();
+            choice = scanner.nextInt();
             switch (choice) {
                 case 1:
                     int height;
                     int width;
                     System.out.println("1. Print the rectangle");
                     System.out.println("input height");
-                    height = input.nextInt();
+                    height = scanner.nextInt();
                     System.out.println("input width");
-                    width = input.nextInt();
+                    width = scanner.nextInt();
                     for (int i = 1; i <= height; i++) {
                         for (int j = 2; j <= width; j++) {
                             System.out.print("*");
@@ -33,7 +33,7 @@ public class ShowPhoto {
                 case 2:
                     System.out.println("2. Print the square triangle (The corner is square at 4 different angles: top-left, top-right, down-left, down-right)");
                     System.out.println("input height");
-                    height = input.nextInt();
+                    height = scanner.nextInt();
                     System.out.println("Print a right triangle, with right angles at down-left");
                     for (int i =1 ; i<= height; i++){
                         for (int j = 1; j < i; j++){
@@ -72,7 +72,7 @@ public class ShowPhoto {
                 case 3:
                     System.out.println("Print isosceles triangle");
                     System.out.println("input height");
-                    height = input.nextInt();
+                    height = scanner.nextInt();
 //                    width = height * 2 - 1;
                     for (int i = 1; i <= height; i++) {
                         for (int j = 0; j <= height - i; j++) { //col/2 - row ' '

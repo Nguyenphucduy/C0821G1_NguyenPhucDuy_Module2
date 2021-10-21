@@ -74,7 +74,7 @@ public class ProductLinkedListTest {
                     break;
 
                 case 4:
-                    System.out.print("Enter the Product id you want to check : ");// chưa hoàn thành
+                    System.out.print("Enter the Product id you want to check : ");
                     int idCheck = Integer.parseInt(scanner.nextLine());
                     boolean check = false;
                     for (int i = 0 ; i < listProduct.size() ; i++){
