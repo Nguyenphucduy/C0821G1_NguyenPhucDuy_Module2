@@ -1,4 +1,4 @@
-package l10_dsa_stack_and_queue.exercise.count_char_use_map.controller;
+package l10_dsa_stack_and_queue.exercise.count_word_use_map.controller;
 
 import java.util.*;
 
@@ -14,8 +14,8 @@ public class TreeMapTest {
         string = string.toLowerCase();
 
         String[] keyList = string.split(" ");
-        for (int i = 0; i < keyList.length; i++) {
-            if (map.containsKey(keyList[i])) { // Check Key có trong map hay không
+        for (int i = 0; i < keyList.length; i++) { // duyệt mảng .length
+            if (map.containsKey(keyList[i])) { // Check Key có trong map hay không,contanskey check key có trong map ko
                 int valueKey = map.get(keyList[i]);
                 map.put(keyList[i], valueKey + 1);// add key và giá trị vào map
             } else {

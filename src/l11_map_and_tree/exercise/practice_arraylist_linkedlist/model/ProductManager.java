@@ -1,6 +1,7 @@
 package l11_map_and_tree.exercise.practice_arraylist_linkedlist.model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ProductManager {
@@ -24,6 +25,7 @@ public class ProductManager {
 
     /**
      * Thêm product
+     *
      * @param product
      */
 
@@ -33,6 +35,7 @@ public class ProductManager {
 
     /**
      * fix product
+     *
      * @param product
      */
 
@@ -51,6 +54,7 @@ public class ProductManager {
 
     /**
      * Xóa sản phẩm theo index
+     *
      * @param index
      */
 
@@ -75,6 +79,7 @@ public class ProductManager {
 
     /**
      * Lấy thông tin sản phẩm theo id
+     *
      * @param id
      * @return
      */
@@ -91,6 +96,7 @@ public class ProductManager {
 
     /**
      * Lấy thông tin sản phẩm theo tên
+     *
      * @param name
      * @return
      */
@@ -102,5 +108,10 @@ public class ProductManager {
         } else {
             return productList.get(index);
         }
+    }
+
+    public void sort() {
+        productList.sort(Comparator.comparingDouble(Product::getPrice));
+        System.out.println(productList);
     }
 }

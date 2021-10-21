@@ -50,8 +50,9 @@ public class ProductManagerTest {
 //        System.out.println("Enter the name product");
 //        String getName = scanner.nextLine();
 //        System.out.println(productManager.getProductInfo(getName));
-        System.out.println("Enter the id product : ");
-        int getId = Integer.parseInt(scanner.nextLine());
-        System.out.println(productManager.getProductInfo(getId));
+//        System.out.println("Enter the id product : ");
+//        int getId = Integer.parseInt(scanner.nextLine());
+//        System.out.println(productManager.getProductInfo(getId));
+        productManager.sort();
     }
 }
