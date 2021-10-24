@@ -2,7 +2,7 @@ package review.week4.candidat_management_system.model;
 
 import java.util.Arrays;
 
-public class Candidate {
+public class Candidate  {
     public static final int EXPERIENCE = 0;
     public static final int FRESHER = 1;// constant of class with static
     public static final int INTERN = 2;

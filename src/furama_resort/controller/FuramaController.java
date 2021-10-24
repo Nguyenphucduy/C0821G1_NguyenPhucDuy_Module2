@@ -37,7 +37,7 @@ public class FuramaController {
                             case 3:
                                 break;
                             case 4:
-                                System.exit(4);
+                                break;
                             default:
                                 System.out.println("No choice!");
                         }
@@ -60,7 +60,7 @@ public class FuramaController {
                             case 3:
                                 break;
                             case 4:
-                                System.exit(4);
+                                break;
                             default:
                                 System.out.println("No choice!");
                         }
@@ -83,7 +83,7 @@ public class FuramaController {
                             case 3:
                                 break;
                             case 4:
-                                System.exit(4);
+                                break;
                             default:
                                 System.out.println("No choice!");
                         }
@@ -112,7 +112,7 @@ public class FuramaController {
                             case 5:
                                 break;
                             case 6:
-                                System.exit(6);
+                                break;
                             default:
                                 System.out.println("No choice!");
                         }
@@ -132,7 +132,7 @@ public class FuramaController {
                             case 2:
                                 break;
                             case 3:
-                                System.exit(3);
+                                break;
                             default:
                                 System.out.println("No choice!");
                         }

@@ -1,6 +1,10 @@
 package review.week4.candidat_management_system.model;
 
-public class Experience extends Candidate{
+import review.week4.candidat_management_system.service.impl.ExperienceService;
+
+import java.util.concurrent.ExecutorService;
+
+public class Experience extends Candidate  {
     private int expInYear;
     private String proSkill;
 
