@@ -10,7 +10,7 @@ public class Fresher extends Candidate {
         this.universityName = universityName;
     }
 
-    public Fresher(int id, int[] birthDate, int[] phone, String firstName, String lastName, String address, String email, int graduationDate, String graduationRank, String universityName) {
+    public Fresher(int id, int birthDate, String phone, String firstName, String lastName, String address, String email, int graduationDate, String graduationRank, String universityName) {
         super(id, birthDate, phone, firstName, lastName, address, email);
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;

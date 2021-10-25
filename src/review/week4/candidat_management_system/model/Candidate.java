@@ -2,18 +2,18 @@ package review.week4.candidat_management_system.model;
 
 import java.util.Arrays;
 
-public class Candidate  {
+public class Candidate {
     public static final int EXPERIENCE = 0;
     public static final int FRESHER = 1;// constant of class with static
     public static final int INTERN = 2;
-    private int id;
-    private int[] birthDate, phone;
+    private int id, birthDate;
+    private String phone;
     private String firstName, lastName, address, email;
 
     public Candidate() {
     }
 
-    public Candidate(int id, int[] birthDate, int[] phone, String firstName, String lastName, String address, String email) {
+    public Candidate(int id, int birthDate, String phone, String firstName, String lastName, String address, String email) {
         this.id = id;
         this.birthDate = birthDate;
         this.phone = phone;
@@ -43,19 +43,19 @@ public class Candidate  {
         this.id = id;
     }
 
-    public int[] getBirthDate() {
+    public int getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(int[] birthDate) {
+    public void setBirthDate(int birthDate) {
         this.birthDate = birthDate;
     }
 
-    public int[] getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int[] phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -95,8 +95,8 @@ public class Candidate  {
     public String toString() {
         return "Candidate{" +
                 "id=" + id +
-                ", birthDate=" + Arrays.toString(birthDate) +
-                ", phone=" + Arrays.toString(phone) +
+                ", birthDate=" + birthDate +
+                ", phone=" + phone +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
