@@ -8,7 +8,7 @@ public class Demo {
             System.out.println("Enter the phone of between 99999999 and 999999999");
             phone = scanner.nextLine();
         } while (phone.length() > 10);
-//        long phone2 = (long) phone;
+//        Long phone2 = (Long) phone;
         System.out.println(phone);
     }
 

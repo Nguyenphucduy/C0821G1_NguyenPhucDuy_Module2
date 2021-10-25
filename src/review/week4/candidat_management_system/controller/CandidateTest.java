@@ -56,7 +56,7 @@ public class CandidateTest {
                                 do {
                                     System.out.println("Enter the phone minimum 10 characters");
                                     phone = scanner.nextLine();
-                                } while (phone.length() > 10);// e chưa xử lý được việc nhập chữ
+                                } while (phone.length() > 10);//  chưa xử lý được việc nhập chữ
                                 System.out.print("Enter the first name : ");
                                 firstName = scanner.nextLine();
                                 System.out.print("Enter the last name : ");
