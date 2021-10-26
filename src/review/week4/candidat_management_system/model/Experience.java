@@ -1,6 +1,5 @@
 package review.week4.candidat_management_system.model;
 
-import review.week4.candidat_management_system.service.impl.ExperienceService;
 
 import java.util.concurrent.ExecutorService;
 

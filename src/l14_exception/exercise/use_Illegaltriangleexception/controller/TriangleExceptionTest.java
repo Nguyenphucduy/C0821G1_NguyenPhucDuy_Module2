@@ -34,16 +34,19 @@ public class TriangleExceptionTest {
                 }
 
                 if (a + b < c || b + c < a || a + c < b) {
-                    throw new IllegalTriangleException("Error");
+                    throw new IllegalTriangleException("Error : because sum of 2 sides is not greater than the other side ");
                 }
 
                 break;
             } catch (IllegalTriangleException illegalTriangleException) {
                 System.out.println(illegalTriangleException.getMessage());
+            }catch (Exception exception){
+                System.err.println("Error" + exception);
             } finally {
                 count++;
                 System.err.println("input " + count + " time");
             }
+
 
         }
 
