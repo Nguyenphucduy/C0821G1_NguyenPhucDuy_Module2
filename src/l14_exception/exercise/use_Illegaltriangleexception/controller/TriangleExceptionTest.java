@@ -18,19 +18,13 @@ public class TriangleExceptionTest {
 
                 System.out.print("input a : ");
                 a = sc.nextInt();
-                if (a < 0) {
-                    throw new IllegalTriangleException("Error :  because a < 0");
-                }
-
                 System.out.print("input b : ");
                 b = sc.nextInt();
-                if (b < 0) {
-                    throw new IllegalTriangleException("Error :  because b < 0");
-                }
                 System.out.print("input c : ");
                 c = sc.nextInt();
-                if (c < 0) {
-                    throw new IllegalTriangleException("Error :  because c < 0");
+
+                if (a < 0 || b < 0 || c < 0) {
+                    throw new IllegalTriangleException("Error :  because a , b or c < 0");
                 }
 
                 if (a + b < c || b + c < a || a + c < b) {
@@ -40,7 +34,7 @@ public class TriangleExceptionTest {
                 break;
             } catch (IllegalTriangleException illegalTriangleException) {
                 System.out.println(illegalTriangleException.getMessage());
-            }catch (Exception exception){
+            } catch (Exception exception) {
                 System.err.println("Error" + exception);
             } finally {
                 count++;
