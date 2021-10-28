@@ -22,7 +22,7 @@ public class CopyFileText {
 
     }
     /*
-    Đọc file theo kí tự
+    Đọc file theo = class thường
     B1: Tạo 1 file và copy đường dẫn
     B2: tạo 1 biến result và new 1 đối tượng FileReader paste đường dẫn
     B3:dùng đối tượng fileReader gọi method read() đọc đến khi -1 = null

@@ -16,6 +16,13 @@ public class Main {
         fileWriter.write("\n");
         fileWriter.close();
     }
+    /*
+    ghi file bằng bufferedWriter
+    Bước 1: tạo 1 đối tượng từ class FileWriter và paste đường dẫn muốn lưu
+    Bước 2: tạo 1 đối tượng từ class BuffedWriter(truyền vào đối tượng file writer để lưu file)
+    Bước 3: từ đối tượng bufferedWriter gọi write( truyền vào đối tượng cần ghi)
+    Bước 4: từ đối tượng bufferedWriter gọi newline() để xuống dòng và đóng file bộ nhớ đệm
+     */
     public static void writeStudentBuffer(Student student) throws IOException {
         FileWriter fileWriter = new FileWriter("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\l15_io_text_file\\demo_theory\\student.scv", true);// true tránh việc ghi đè
        BufferedWriter bufferedWriter =new BufferedWriter(fileWriter);
