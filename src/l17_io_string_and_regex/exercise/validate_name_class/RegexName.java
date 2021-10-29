@@ -13,7 +13,7 @@ public class RegexName {
 
      Kết thúc phải là 1 trong những ký tự chữ hoa sau: G, H, I, K, L, M
      */
-    public static final String REGEX_NAME = "^C[0-9]{4}G$";
+    public static final String REGEX_NAME = "^[A-Z&&[CAP]]{1}\\d{4}[A-Z&&[GHIKLM]]{1}$";
 
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile(REGEX_NAME); //class pattern để use regex

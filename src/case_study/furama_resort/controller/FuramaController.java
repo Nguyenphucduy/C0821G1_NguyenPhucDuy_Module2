@@ -139,7 +139,7 @@ public class FuramaController {
                     } while (choice2 != 3);
                     break;
                 case 6:
-                    System.exit(6);
+                    break;
                 default:
                     System.out.println("No choice!");
 

@@ -4,17 +4,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NameClass {
-    private static Pattern pattern;
-    private Matcher matcher;
 
-    private static final String NAME_CLASS_REGEX =   "^C[0-9]{4}G$";
+    private static final String NAME_CLASS_REGEX =   "^[A-Z&&[CAP]]{1}\\d{4}[A-Z&&[GHIKLM]]{1}$";
 
     public NameClass() {
-        pattern = Pattern.compile(NAME_CLASS_REGEX);
     }
 
     public boolean validateName(String regex) {
-        matcher = pattern.matcher(regex);
+        Pattern pattern = Pattern.compile(NAME_CLASS_REGEX);
+        Matcher matcher = pattern.matcher(regex);
         return matcher.matches();
     }
 }

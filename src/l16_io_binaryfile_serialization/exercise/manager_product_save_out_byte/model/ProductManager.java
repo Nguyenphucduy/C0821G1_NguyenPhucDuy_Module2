@@ -6,48 +6,42 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ProductManager {
-    Scanner scanner = new Scanner(System.in);
-    private static List<Product> productArrayList = new ArrayList<>();
-    List<Product> productwriteFile;
-    {
-        productwriteFile = writeFile(productArrayList,"E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\l16_io_binaryfile_serialization\\exercise\\manager_product_save_out_byte\\product.txt");
-    }
-    List<Product> productReadFile = readFile("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\l16_io_binaryfile_serialization\\exercise\\manager_product_save_out_byte\\product.txt");
-    static {
-        productArrayList.add(new Product(1,"coca","Cocacola",12000));
-        productArrayList.add(new Product(2,"pepsi","Pepsi",18000));
-        productArrayList.add(new Product(3,"socola","Socolalalala",3000));
+    private  List<Product> productList ;
+
+    public ProductManager(List<Product> productList) {
+        this.productList = productList;
     }
 
+    public ProductManager() {
+        productList = new ArrayList<>();
+    }
 
-    public void addProduct() {
-        System.out.print("Enter the id : ");
-        int id = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter the name : ");
-        String name = scanner.nextLine();
-        System.out.print("Enter the manufacturer : ");
-        String manufacturer = scanner.nextLine();
-        System.out.print("Enter the price : ");
-        double price = Double.parseDouble(scanner.nextLine());
-        Product product = new Product(id, name, manufacturer, price);
-        productArrayList.add(product);
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
+    }
+
+    public void addProduct(Product product) {
+        productList.add(product);
+
     }
 
     public void displayProduct() {
-        for (Product product : productArrayList) {
+        for (Product product : productList) {
             System.out.println(product);
         }
     }
 
-    public void searchProduct() {
-        System.out.print("Enter the id : ");
-        int idProduct = Integer.parseInt(scanner.nextLine());
+    public void searchProduct(int idProduct) {
         boolean check = false;
-        for (int i = 0; i < productArrayList.size(); i++) {
-            if (idProduct == productArrayList.get(i).getId()) {
+        for (int i = 0; i < productList.size(); i++) {
+            if (idProduct == productList.get(i).getId()) {
                 check = true;
                 System.out.println(" product in arrayList");
-                System.out.println(productArrayList.get(i).toString());
+                System.out.println(productList.get(i).toString());
                 break;
             }
         }
@@ -69,8 +63,7 @@ public class ProductManager {
         return products;
     }
 
-    public static List<Product> readFile(String path) {
-        List<Product> products = new ArrayList<>();
+    public static List<Product> readFile(List<Product> products,String path) {
         try {
             FileInputStream fileInputStream = new FileInputStream(path);
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
@@ -86,7 +79,6 @@ public class ProductManager {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ProductManager productManager = new ProductManager();
-        List<Product> productList = new ArrayList<>();
         int choice;
         do {
             System.out.println("menu product ");
@@ -98,21 +90,38 @@ public class ProductManager {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    productManager.addProduct();
+                    System.out.print("Enter the id : ");
+                    int id = Integer.parseInt(scanner.nextLine());
+                    System.out.print("Enter the name : ");
+                    String name = scanner.nextLine();
+                    System.out.print("Enter the manufacturer : ");
+                    String manufacturer = scanner.nextLine();
+                    System.out.print("Enter the price : ");
+                    double price = Double.parseDouble(scanner.nextLine());
+                    Product product = new Product(id, name, manufacturer, price);
+                    productManager.addProduct(product);
                     break;
                 case 2:
-                    productManager.displayProduct();
+                   productManager.displayProduct();
                     break;
                 case 3:
-                    productManager.searchProduct();
+                    System.out.print("Enter the id : ");
+                    int idProduct = Integer.parseInt(scanner.nextLine());
+                    productManager.searchProduct(idProduct);
                     break;
                 case 4:
-                    System.exit(4);
+                    break;
                 default:
                     System.out.println(" no choice!");
 
             }
         } while (choice != 4);
+        final String path = "E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\l16_io_binaryfile_serialization\\exercise\\manager_product_save_out_byte\\product.txt";
+        writeFile(productManager.getProductList(), path);
+        List<Product> productList = readFile(productManager.getProductList(), path);
+        for (Product product : productList){
+            System.out.println(product);
+        }
     }
 
 }
