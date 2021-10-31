@@ -12,8 +12,8 @@ public class Regex {
     public static final String REGEX_PHONE_NUMBER = "^84\\d{7}$";
 
     public static void main(String[] args) {
-        Pattern pattern = Pattern.compile(REGEX_PHONE_NUMBER); //class pattern để use regex
-        String input = "843456789";
+        Pattern pattern = Pattern.compile(REGEX_EMAIL); //class pattern để use regex
+        String input = "phucduy@gmail.com";
         Matcher matcher = pattern.matcher(input); // check input đầu vào theo regex
         System.out.println(matcher.matches());
     }

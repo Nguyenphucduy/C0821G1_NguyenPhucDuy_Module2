@@ -1,0 +1,12 @@
+package l18_solid.demo.dependency_inversion_principle.true_design;
+
+public class BackendPHP implements IDevelop {
+    @Override
+    public void develop() {
+        this.codePHP();
+    }
+
+    private void codePHP(){
+        System.out.println("Sử dụng code PHP xây dựng Backend");
+    }
+}

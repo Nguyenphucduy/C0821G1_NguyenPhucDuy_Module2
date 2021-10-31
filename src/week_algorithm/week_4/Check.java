@@ -17,13 +17,10 @@ public class Check {
             }
         }
         Set<Integer> integers = map.keySet();
-        for (Integer i : integers) {
-            for (int j = i; j < integers.size()-1;j++) {
-                if (!(map.get(j) == (map.get(j + 1)))) {
-                    return false;
-                }
+        for (int j = 1 ; j < integers.size(); j++)
+            if (!map.get(inputArray[0]).equals(map.get(inputArray[j]))){
+                return false;
             }
-        }
         return true;
     }
 
