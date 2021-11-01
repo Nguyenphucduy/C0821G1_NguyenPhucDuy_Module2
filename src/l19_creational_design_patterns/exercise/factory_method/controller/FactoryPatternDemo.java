@@ -1,7 +1,7 @@
 package l19_creational_design_patterns.exercise.factory_method.controller;
 
-import l19_creational_design_patterns.exercise.factory_method.model.Shape;
 import l19_creational_design_patterns.exercise.factory_method.model.ShapeFactory;
+import l19_creational_design_patterns.exercise.factory_method.service.Shape;
 
 public class FactoryPatternDemo {
     public static void main(String[] args) {
