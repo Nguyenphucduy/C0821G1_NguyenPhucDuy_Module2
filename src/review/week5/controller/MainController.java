@@ -1,6 +1,5 @@
 package review.week5.controller;
 
-import review.week5.model.Candidate;
 import review.week5.service.impl.CandidateService;
 import review.week5.service.impl.FileService;
 

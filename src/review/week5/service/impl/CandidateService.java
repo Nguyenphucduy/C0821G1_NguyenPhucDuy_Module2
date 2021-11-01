@@ -150,19 +150,28 @@ public class CandidateService implements ICandidateService, IExperienceService, 
 
     @Override
     public void search() {
-        showAll();
+        boolean check = true;
+        int index = 0;
         System.out.println("Enter First Name or Last Name");
         String name = scanner.nextLine();
-        System.out.println("Enter type of candidate;");
-        int type = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < candidateList.size(); i++) {
             if (candidateList.get(i).getFirstName().equals(name)) {
+                check = true;
+                index = i;
                 System.out.println(candidateList.get(i));
             } else if (candidateList.get(i).getLastName().equals(name)) {
                 System.out.println(candidateList.get(i));
+                index = i;
+                check = true;
+            }else {
+                check = false;
             }
         }
-
+        if (check){
+            System.out.println(candidateList.get(index));
+        }else {
+            System.err.println("Not found");
+        }
     }
 }
 
