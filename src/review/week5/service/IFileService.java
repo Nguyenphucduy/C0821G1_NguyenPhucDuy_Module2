@@ -6,6 +6,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface IFileService {
-    void writeBuffer(Candidate candidate) throws IOException;
-    List<Candidate> readCSV(List<Candidate> candidatesList) throws IOException;
+    void writeBuffer(Candidate candidate, String path) throws IOException;
+    List<String[]> readCSV( String path) throws IOException;
 }

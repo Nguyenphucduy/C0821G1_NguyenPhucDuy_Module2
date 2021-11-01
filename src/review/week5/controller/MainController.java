@@ -5,6 +5,7 @@ import review.week5.service.impl.CandidateService;
 import review.week5.service.impl.FileService;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -41,9 +42,17 @@ public class MainController {
                     break;
             }
         }
-        List<Candidate> candidateList = fileService.readCSV(candidateService.getCandidateList());
-        for (Candidate candidate : candidateList) {
-            System.err.println(candidate);
+        List<String[]> experienceList = fileService.readCSV("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\experience.csv");
+        for (String[] experience : experienceList) {
+            System.err.println(Arrays.toString(experience));
+        }
+        List<String[]> fresherList = fileService.readCSV("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\fresher.csv");
+        for (String[] fresher : fresherList) {
+            System.err.println(Arrays.toString(fresher));
+        }
+        List<String[]> internList = fileService.readCSV("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\intern.csv");
+        for (String[] intern : internList) {
+            System.err.println(Arrays.toString(intern));
         }
     }
 }
