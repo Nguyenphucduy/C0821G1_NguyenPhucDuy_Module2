@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IFileService {
     void writeBuffer(Candidate candidate, String path) throws IOException;
-    List<String[]> readCSV( String path) throws IOException;
+    List<Candidate> readBuffer( String path) throws IOException;
 }

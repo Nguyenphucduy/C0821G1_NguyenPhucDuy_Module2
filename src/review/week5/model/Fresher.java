@@ -1,6 +1,6 @@
 package review.week5.model;
 
-public class Fresher extends Candidate{
+public class Fresher extends Candidate {
     public static final int FRESHER = 1;
     private int graduationDate;
     private String graduationRank;

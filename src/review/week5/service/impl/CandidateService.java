@@ -1,11 +1,12 @@
 package review.week5.service.impl;
 
+import review.week5.common.FileWriteRead;
 import review.week5.model.Candidate;
 import review.week5.model.Experience;
 import review.week5.model.Fresher;
 import review.week5.model.Intern;
 import review.week5.service.*;
-import review.week5.utils.Validate;
+import review.week5.common.Validate;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -22,13 +23,14 @@ public class CandidateService implements ICandidateService, IExperienceService, 
 
     public CandidateService() {
         this.candidateList = new ArrayList<>();
+//        candidateList.addAll(fileService.)
     }
 
     public List<Candidate> getCandidateList() {
         return candidateList;
     }
 
-    FileService fileService = new FileService();
+    FileWriteRead fileService = new FileWriteRead();
     Scanner scanner = new Scanner(System.in);
 
     @Override
@@ -150,17 +152,15 @@ public class CandidateService implements ICandidateService, IExperienceService, 
 
     @Override
     public void search() {
-        boolean check = true;
+        boolean check = false;
         int index = 0;
         System.out.println("Enter First Name or Last Name");
         String name = scanner.nextLine();
         for (int i = 0; i < candidateList.size(); i++) {
             if (candidateList.get(i).getFirstName().equals(name)) {
-                check = true;
                 index = i;
-                System.out.println(candidateList.get(i));
+                check = true;
             } else if (candidateList.get(i).getLastName().equals(name)) {
-                System.out.println(candidateList.get(i));
                 index = i;
                 check = true;
             }else {

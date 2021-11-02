@@ -1,7 +1,7 @@
 package review.week5.controller;
 
 import review.week5.service.impl.CandidateService;
-import review.week5.service.impl.FileService;
+import review.week5.common.FileWriteRead;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ public class MainController {
         boolean check = true;
         Scanner scanner = new Scanner(System.in);
         CandidateService candidateService = new CandidateService();
-        FileService fileService = new FileService();
+        FileWriteRead fileService = new FileWriteRead();
         while (check) {
             System.out.println("Candidate management system:");
             System.out.println("1. Experience");
@@ -41,15 +41,15 @@ public class MainController {
                     break;
             }
         }
-        List<String[]> experienceList = fileService.readCSV("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\experience.csv");
+        List<String[]> experienceList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\experience.csv");
         for (String[] experience : experienceList) {
             System.err.println(Arrays.toString(experience));
         }
-        List<String[]> fresherList = fileService.readCSV("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\fresher.csv");
+        List<String[]> fresherList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\fresher.csv");
         for (String[] fresher : fresherList) {
             System.err.println(Arrays.toString(fresher));
         }
-        List<String[]> internList = fileService.readCSV("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\intern.csv");
+        List<String[]> internList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\intern.csv");
         for (String[] intern : internList) {
             System.err.println(Arrays.toString(intern));
         }

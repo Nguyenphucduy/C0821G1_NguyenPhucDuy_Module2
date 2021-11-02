@@ -45,11 +45,10 @@ public class Main {
                 student = new Student(Integer.parseInt(temp[0]), temp[1], temp[2]);
                 studentList.add(student);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
+            assert bufferedReader != null;
             bufferedReader.close(); // close buffer - > tự động close FileRead
         }
         return studentList;

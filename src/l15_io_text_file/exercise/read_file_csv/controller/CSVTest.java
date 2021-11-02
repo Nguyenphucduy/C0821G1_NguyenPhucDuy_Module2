@@ -39,6 +39,7 @@ public class CSVTest {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }finally {
+            assert bufferedReader != null;
             bufferedReader.close(); // close buffer - > tự động close FileRead
         }
         return countryList;
