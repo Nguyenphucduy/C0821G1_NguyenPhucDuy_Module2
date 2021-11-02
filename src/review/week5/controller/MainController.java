@@ -1,5 +1,6 @@
 package review.week5.controller;
 
+import review.week5.model.Candidate;
 import review.week5.service.impl.CandidateService;
 import review.week5.common.FileWriteRead;
 
@@ -41,17 +42,27 @@ public class MainController {
                     break;
             }
         }
-        List<String[]> experienceList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\experience.csv");
-        for (String[] experience : experienceList) {
-            System.err.println(Arrays.toString(experience));
+        List<Candidate> experienceList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\experience.csv");
+
+        for (Candidate experience : experienceList) {
+            System.err.println(experience);
         }
-        List<String[]> fresherList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\fresher.csv");
-        for (String[] fresher : fresherList) {
-            System.err.println(Arrays.toString(fresher));
+
+
+        List<Candidate> fresherList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\fresher.csv");
+
+        for (Candidate fresher : fresherList) {
+            System.err.println(fresher);
         }
-        List<String[]> internList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\intern.csv");
-        for (String[] intern : internList) {
-            System.err.println(Arrays.toString(intern));
+
+
+
+        List<Candidate> internList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\review\\week5\\data\\intern.csv");
+
+        for (Candidate intern : internList) {
+            System.err.println(intern);
         }
+
+
     }
 }
