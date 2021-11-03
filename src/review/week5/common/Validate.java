@@ -5,13 +5,32 @@ import java.util.regex.Pattern;
 
 public class Validate {
     static Scanner scanner = new Scanner(System.in);
+    public static String inputID(){
+        String id = null;
+        try {
+            System.out.print("Enter the id starting with E,F or I : ");
+             id = scanner.nextLine();
+            while (!Pattern.matches("^[A-Z&&[EFI]]{1}\\d{4}$", id)) {
+                System.out.print("Enter the id starting with E,F or I : ");
+                id = scanner.nextLine();
+            }
+        }catch (Exception exception){
+            System.err.println("Error");
+        }
+        return id;
+    }
 
     public static String inputEmail() {
-        System.out.print ("Enter email : ");
-        String email = scanner.nextLine();
-        while (!Pattern.matches("^\\w+@\\w+(\\.\\w+){1,2}$", email)) {
-            System.out.print("Enter email : ");
-            email = scanner.nextLine();
+        String email = null;
+        try {
+            System.out.print("Enter the email : ");
+           email = scanner.nextLine();
+            while (!Pattern.matches("^\\w+@\\w+(\\.\\w+){1,2}$", email)) {
+                System.out.print("Enter the email : ");
+                email = scanner.nextLine();
+            }
+        }catch (Exception exception){
+            System.err.println("Error");
         }
         return email;
 
@@ -19,43 +38,56 @@ public class Validate {
     }
 
     public static int inputYearOfBirth() {
-        int yearOfBirth;
-        do {
-            System.out.print("Enter the year of birth between 1900 and 2021 : ");
-            yearOfBirth = Integer.parseInt(scanner.nextLine());
-        } while (yearOfBirth > 2021 || yearOfBirth < 1900);
+        int yearOfBirth = 0;
+        try {
+            do {
+                System.out.print("Enter the year of birth between 1900 and 2021 : ");
+                yearOfBirth = Integer.parseInt(scanner.nextLine());
+            } while (yearOfBirth > 2021 || yearOfBirth < 1900);
+        }catch (Exception exception){
+            System.err.println("Error");
+        }
         return yearOfBirth;
     }
 
     static public String inputPhone() {
-        System.out.print("Enter a phone number starting with 84 : ");
-        String phone = scanner.nextLine();
-        while (!Pattern.matches("^84\\d{9}$", phone)) {
-            System.out.println("No matches");
-            System.out.print("Enter a phone number starting with 84 : ");
+        String phone = null;
+        try {
+            System.out.print("Enter a phone number starting with 0 : ");
             phone = scanner.nextLine();
+            while (!Pattern.matches("^0\\d{9}$", phone)) {
+                System.out.println("No matches");
+                System.out.print("Enter a phone number starting with 0 : ");
+                phone = scanner.nextLine();
+            }
+        }catch (Exception exception){
+            System.err.println("Error");
         }
         return phone;
     }
 
-    public static int checkExpInYear() {
-        int expInYear;
-        do {
-            System.out.print("Enter the expInYear of between 0 and 100 : ");
-            expInYear = Integer.parseInt(scanner.nextLine());
-        } while (expInYear > 100 || expInYear < 0);
+    public static int inputExpInYear() {
+        int expInYear = 0;
+        try {
+            do {
+                System.out.print("Enter the expInYear of between 0 and 100 : ");
+                expInYear = Integer.parseInt(scanner.nextLine());
+            } while (expInYear > 100 || expInYear < 0);
+        }catch (Exception exception){
+            System.err.println("Error");
+        }
         return expInYear;
     }
 
-    public static String choiceGraduationRank() {
-        String graduationRank = "";
-
+    public static String inputGraduationRank() {
+        String graduationRank = null;
         System.out.println("Choice Graduation Rank");
         System.out.println("1. Excellent");
         System.out.println("2. Good");
         System.out.println("3. Fair");
         System.out.println("4. Poor");
         System.out.print("Enter your choice : ");
+        try{
         int choice = Integer.parseInt(scanner.nextLine());
         switch (choice) {
             case 1:
@@ -70,6 +102,9 @@ public class Validate {
             case 4:
                 graduationRank = "Poor";
                 break;
+        }
+        }catch (Exception exception){
+            System.err.println("Error");
         }
         return graduationRank;
     }

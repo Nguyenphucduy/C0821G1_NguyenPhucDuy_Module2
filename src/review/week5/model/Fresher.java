@@ -4,19 +4,19 @@ public class Fresher extends Candidate {
     public static final int FRESHER = 1;
     private int graduationDate;
     private String graduationRank;
-    private String education;
+    private String universityName;
 
     public Fresher(int graduationDate, String graduationRank, String education) {
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;
-        this.education = education;
+        this.universityName = education;
     }
 
-    public Fresher(int id, String firstName, String lastName, int yearOfBirth, String address, String phone, String email, int graduationDate, String graduationRank, String education) {
+    public Fresher(String id, String firstName, String lastName, int yearOfBirth, String address, String phone, String email, int graduationDate, String graduationRank, String education) {
         super(id, firstName, lastName, yearOfBirth, address, phone, email);
         this.graduationDate = graduationDate;
         this.graduationRank = graduationRank;
-        this.education = education;
+        this.universityName = education;
     }
 
     public static int getFRESHER() {
@@ -40,15 +40,15 @@ public class Fresher extends Candidate {
     }
 
     public String getEducation() {
-        return education;
+        return universityName;
     }
 
     public void setEducation(String education) {
-        this.education = education;
+        this.universityName = education;
     }
 
     @Override
     public String toString() {
-        return super.toString() + "," + graduationDate + "," + graduationRank + "," + education;
+        return super.toString() + "," + graduationDate + "," + graduationRank + "," + universityName;
     }
 }

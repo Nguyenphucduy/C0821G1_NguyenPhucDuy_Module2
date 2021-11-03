@@ -1,7 +1,7 @@
 package review.week5.model;
 
 public abstract class Candidate {
-    private int id;
+    private String id;
     private String firstName;
     private String lastName;
     private int yearOfBirth;
@@ -12,7 +12,7 @@ public abstract class Candidate {
     public Candidate() {
     }
 
-    public Candidate(int id, String firstName, String lastName, int yearOfBirth, String address, String phone, String email) {
+    public Candidate(String id, String firstName, String lastName, int yearOfBirth, String address, String phone, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,11 +23,11 @@ public abstract class Candidate {
     }
 
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

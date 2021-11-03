@@ -29,20 +29,18 @@ public class FileWriteRead implements IFileService {
             bufferedReader = new BufferedReader(fileReader);
             String line;
             String[] temp;
-            Candidate experience;
-            Candidate fresher;
-            Candidate intern;
+            Candidate experience,fresher,intern;
             while ((line = bufferedReader.readLine()) != null) {
                 temp = line.split(",");
                 if (temp.length == 9) {
-                    experience = new Experience(Integer.parseInt(temp[0]), temp[1], temp[2], Integer.parseInt(temp[3]), temp[4], temp[5], temp[6], Integer.parseInt(temp[7]), temp[8]);
+                    experience = new Experience(temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), temp[4], temp[5], temp[6], Integer.parseInt(temp[7]), temp[8]);
                     candidateList.add(experience);
                 } else if (temp.length == 10) {
-                    if (temp[0].equals("11")){
-                        fresher = new Fresher(Integer.parseInt(temp[0]), temp[1], temp[2], Integer.parseInt(temp[3]), temp[4], temp[5], temp[6], Integer.parseInt(temp[7]), temp[8], temp[9]);candidateList.add(fresher);
+                    if (temp[0].startsWith("F")){ // check kí tự đầu tiên
+                        fresher = new Fresher(temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), temp[4], temp[5], temp[6], Integer.parseInt(temp[7]), temp[8], temp[9]);
                         candidateList.add(fresher);
-                    }else if (temp[0].equals("22")){
-                        intern = new Intern(Integer.parseInt(temp[0]), temp[1], temp[2], Integer.parseInt(temp[3]), temp[4], temp[5], temp[6],(temp[7]), Integer.parseInt(temp[8]), temp[9]);
+                    }else{
+                        intern = new Intern(temp[0], temp[1], temp[2], Integer.parseInt(temp[3]), temp[4], temp[5], temp[6],(temp[7]), Integer.parseInt(temp[8]), temp[9]);
                         candidateList.add(intern);
                     }
                 }

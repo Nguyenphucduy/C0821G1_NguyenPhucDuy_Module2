@@ -1,5 +1,11 @@
 package case_study.furama_resort.controllers;
 
+import case_study.furama_resort.models.Employee;
+import case_study.furama_resort.services.EmployeeService;
+import case_study.furama_resort.services.Service;
+import case_study.furama_resort.services.impl.EmployeeServiceImpl;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -9,6 +15,7 @@ public class FuramaController {
         int choice, choice2;
 
         Scanner scanner = new Scanner(System.in);
+        EmployeeService employeeService = new EmployeeServiceImpl();
         do {
             System.out.println("Menu");
             System.out.println("1. Employee Management");
@@ -31,10 +38,13 @@ public class FuramaController {
                         choice2 = scanner.nextInt();
                         switch (choice2) {
                             case 1:
+                                employeeService.displayEmployeeList();
                                 break;
                             case 2:
+                                employeeService.addEmployee();
                                 break;
                             case 3:
+//                                employeeService.updateEmployee();
                                 break;
                             case 4:
                                 break;
