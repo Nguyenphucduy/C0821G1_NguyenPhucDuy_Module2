@@ -1,9 +1,6 @@
 package l11_map_and_tree.practice.hashmap_linkedhashmap_treemap.controller;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class MapTest {
     public static void main(String[] args) {
@@ -14,18 +11,23 @@ public class MapTest {
         hashMap.put("Lewis", 29);
         hashMap.put("Cook", 29);
         System.out.println("Display entries in HashMap");
-        System.out.println(hashMap + "\n");
+//        System.out.println(hashMap + "\n");
         //treemap
         Map<String, Integer> treeMap = new TreeMap<>(hashMap);
         System.out.println("Display entries in ascending order of key");
-        System.out.println(treeMap);
+//        System.out.println(treeMap);
         //LinkedHashMap
-        Map<String, Integer> linkedHashMap = new LinkedHashMap<>(16, 0.75f, true);
+        Map<String, Integer> linkedHashMap = new LinkedHashMap<>();
         linkedHashMap.put("Smith", 30);
         linkedHashMap.put("Anderson", 31);
         linkedHashMap.put("Lewis", 29);
         linkedHashMap.put("Cook", 29);
-        System.out.println("\nThe age for " + "Lewis is " + linkedHashMap.get("Lewis"));
+//        System.out.println("\nThe age for " + "Lewis is " + linkedHashMap.get("Lewis"));
+//        System.out.println(linkedHashMap);
+        Set<String> strings = linkedHashMap.keySet();
+        for (String string : strings){
+            System.out.println( linkedHashMap.get(string));
+        }
 
     }
 }

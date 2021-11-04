@@ -1,9 +1,13 @@
 package case_study.furama_resort.models;
 
-public class Booking {
-    private int bookingCode;
-    private String startDay;
-    private String endDay;
+import case_study.furama_resort.services.Service;
+
+import java.util.Comparator;
+
+public class Booking implements Service, Comparable<Booking> {
+    private String bookingCode;
+    private int startDay;
+    private int endDay;
     private String customerCode;
     private String serviceName;
     private String serviceType;
@@ -11,7 +15,7 @@ public class Booking {
     public Booking() {
     }
 
-    public Booking(int bookingCode, String startDay, String endDay, String customerCode, String serviceName, String serviceType) {
+    public Booking(String bookingCode, int startDay, int endDay, String customerCode, String serviceName, String serviceType) {
         this.bookingCode = bookingCode;
         this.startDay = startDay;
         this.endDay = endDay;
@@ -20,27 +24,27 @@ public class Booking {
         this.serviceType = serviceType;
     }
 
-    public int getBookingCode() {
+    public String getBookingCode() {
         return bookingCode;
     }
 
-    public void setBookingCode(int bookingCode) {
+    public void setBookingCode(String bookingCode) {
         this.bookingCode = bookingCode;
     }
 
-    public String getStartDay() {
+    public int getStartDay() {
         return startDay;
     }
 
-    public void setStartDay(String startDay) {
+    public void setStartDay(int startDay) {
         this.startDay = startDay;
     }
 
-    public String getEndDay() {
+    public int getEndDay() {
         return endDay;
     }
 
-    public void setEndDay(String endDay) {
+    public void setEndDay(int endDay) {
         this.endDay = endDay;
     }
 
@@ -71,5 +75,26 @@ public class Booking {
     @Override
     public String toString() {
         return this.bookingCode + "," + this.startDay + "," + this.endDay + "," + this.customerCode + "," + this.serviceName + "," + this.serviceType;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Booking)){
+            return false;
+        }
+
+        Booking booking = (Booking) obj;
+
+        return this.startDay == booking.getStartDay();
+    }
+
+    @Override
+    public int compareTo(Booking o) {
+        int result = this.startDay - o.startDay;
+        if (result == 0){
+            result = this.endDay - o.endDay;
+        }
+        return result;
     }
 }

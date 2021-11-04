@@ -26,12 +26,12 @@ public class StackReverse {
         Stack<String> stack = new Stack<>();
 
         int i;
-        String reverse = "";
+        StringBuilder reverse = new StringBuilder();
         for (i = 0; i < string.length(); i++)
             stack.push(string.charAt(i) + "" );// int - > + "" -> string
 
         while (!stack.isEmpty()){
-          reverse+= stack.pop();
+          reverse.append(stack.pop());
         }
         System.out.println(reverse);
 

@@ -33,8 +33,6 @@ public class Validate {
             System.err.println("Error");
         }
         return email;
-
-
     }
 
     public static int inputYearOfBirth() {

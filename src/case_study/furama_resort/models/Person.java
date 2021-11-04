@@ -1,6 +1,8 @@
 package case_study.furama_resort.models;
 
-public abstract class Person {
+import case_study.furama_resort.services.Service;
+
+public abstract class Person implements Service {
     private String fullName;
     private String dateOfBirth;
     private String gender;

@@ -1,22 +1,34 @@
 package case_study.furama_resort.models;
 
 
-public abstract class Facility {
+import case_study.furama_resort.services.Service;
+
+public abstract class Facility implements Service {
+    private String codeService;
     private String nameService;
     private double usableArea;
     private double rentCost;
     private int numberOfPeople;
-    private int rentalType;
+    private String rentalType;
 
     public Facility() {
     }
 
-    public Facility(String nameService, double usableArea, double rentCost, int numberOfPeople, int rentalType) {
+    public Facility(String codeService, String nameService, double usableArea, double rentCost, int numberOfPeople, String rentalType) {
+        this.codeService = codeService;
         this.nameService = nameService;
         this.usableArea = usableArea;
         this.rentCost = rentCost;
         this.numberOfPeople = numberOfPeople;
         this.rentalType = rentalType;
+    }
+
+    public String getCodeService() {
+        return codeService;
+    }
+
+    public void setCodeService(String codeService) {
+        this.codeService = codeService;
     }
 
     public String getNameService() {
@@ -51,16 +63,16 @@ public abstract class Facility {
         this.numberOfPeople = numberOfPeople;
     }
 
-    public int getRentalType() {
+    public String getRentalType() {
         return rentalType;
     }
 
-    public void setRentalType(int rentalType) {
+    public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
     }
 
     @Override
     public String toString() {
-        return this.nameService + "," + this.usableArea + "," + this.rentCost + "," + this.numberOfPeople + "," + this.rentalType;
+        return this.codeService + "," + this.nameService + "," + this.usableArea + "," + this.rentCost + "," + this.numberOfPeople + "," + this.rentalType;
     }
 }

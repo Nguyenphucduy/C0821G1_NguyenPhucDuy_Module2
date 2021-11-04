@@ -3,10 +3,10 @@ package l21_behavioral_design_pattern.demo.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HotGirt implements Subject{
+public class HotGirl implements Subject{
 
   public List<Boy> friendZone = new ArrayList<>();
-    public HotGirt() {
+    public HotGirl() {
 
     }
     @Override
