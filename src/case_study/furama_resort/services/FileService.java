@@ -5,6 +5,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface FileService extends Service{
-    void writeBuffer(Service service, String path) throws IOException;
-    List<Service> readBuffer(String path) throws IOException;
+    void writeBuffer(Object object, String path) throws IOException;
+    List<Object> readBuffer(String path) throws IOException;
 }

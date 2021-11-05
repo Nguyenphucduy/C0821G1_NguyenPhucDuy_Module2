@@ -17,7 +17,11 @@ public class CustomerServiceImpl implements CustomerService {
 
     public CustomerServiceImpl() throws IOException {
         customerList = new LinkedList<>();
-//        customerList.add((Customer) fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv"));
+        List<Object> objectList; // tạo 1 list Object nhận về giá trị của File và ép kiểu từng đối tượng đó sang kiểu mình muốn
+        objectList = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv");
+        for (Object o : objectList){
+            customerList.add((Customer) o);
+        }
     }
 
     public static List<Customer> getCustomerList() {
@@ -40,14 +44,11 @@ public class CustomerServiceImpl implements CustomerService {
         try {
             System.out.print("Enter the full name: ");
             String fullName = scanner.nextLine();
-            System.out.print("Enter the date of birth :  ");
-            String dateOfBirth = scanner.nextLine();
+            String dateOfBirth = Validate.inputDateOfBirth();
             String gender = Validate.inputGender();
-            System.out.print("Enter the identity Card Number: ");
-            String identityCardNumber = scanner.nextLine();
+            String identityCardNumber = Validate.identityCardNumber();
             String phoneNumber = Validate.inputPhoneNumber();
-            System.out.print("Enter the email: ");
-            String email = scanner.nextLine();
+            String email = Validate.inputEmail();
             System.out.print("Enter the customer Code: ");
             String customerCode = scanner.nextLine();
             String customerType = Validate.inputCustomerType();
@@ -74,13 +75,11 @@ public class CustomerServiceImpl implements CustomerService {
                 System.out.print("Enter the update full name: ");
                 String fullName = scanner.nextLine();
                 customerList.get(index).setFullName(fullName);
-                System.out.print("Enter the update date of birth :  ");
-                String dateOfBirth = scanner.nextLine();
+                String dateOfBirth = Validate.inputDateOfBirth();
                 customerList.get(index).setDateOfBirth(dateOfBirth);
                 String gender = Validate.inputGender();
                 customerList.get(index).setGender(gender);
-                System.out.print("Enter the update identity Card Number: ");
-                String identityCardNumber = scanner.nextLine();
+                String identityCardNumber = Validate.identityCardNumber();
                 customerList.get(index).setIdentityCardNumber(identityCardNumber);
                 String phoneNumber = Validate.inputPhoneNumber();
                 customerList.get(index).setPhoneNumber(phoneNumber);

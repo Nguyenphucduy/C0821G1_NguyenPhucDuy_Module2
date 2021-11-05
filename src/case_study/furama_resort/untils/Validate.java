@@ -81,17 +81,29 @@ public class Validate {
         }
         return numberOfPeople;
     }
-    public static int inputDay() {
-        int day = 0;
+    public static int inputStartDay() {
+        int startDay = 0;
         try {
             do {
-                System.out.print("Enter the day : ");
-                day = Integer.parseInt(scanner.nextLine());
-            } while (day < 0 || day > 31);
+                System.out.print("Enter the start Day : ");
+                startDay = Integer.parseInt(scanner.nextLine());
+            } while (startDay < 0 || startDay > 31);
         } catch (Exception exception) {
             System.err.println("Error");
         }
-        return day;
+        return startDay;
+    }
+    public static int inputEndDay() {
+        int endDay = 0;
+        try {
+            do {
+                System.out.print("Enter the end Day : ");
+                endDay = Integer.parseInt(scanner.nextLine());
+            } while (endDay < 0 || endDay > 31);
+        } catch (Exception exception) {
+            System.err.println("Error");
+        }
+        return endDay;
     }
 
     public static int inputNumberOfFloor() {
@@ -144,7 +156,7 @@ public class Validate {
                     roomStandard = "4star";
                     break;
                 case 5:
-                    roomStandard = "5sta";
+                    roomStandard = "5star";
                     break;
             }
         } catch (Exception exception) {
@@ -193,13 +205,13 @@ public class Validate {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    ServiceType = "V";
+                    ServiceType = "Villa";
                     break;
                 case 2:
-                    ServiceType = "H";
+                    ServiceType = "House";
                     break;
                 case 3:
-                    ServiceType = "R";
+                    ServiceType = "Room";
                     break;
             }
         } catch (Exception exception) {
@@ -341,6 +353,36 @@ public class Validate {
             System.err.println("Error");
         }
         return phone;
+    }
+    static public String inputDateOfBirth() {
+        String dateOfBirth = null;
+        try {
+            System.out.print("Enter a date Of Birth (dd/mm/YYYY)  : ");
+            dateOfBirth = scanner.nextLine();
+            while (!Pattern.matches("^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$", dateOfBirth)) {
+                System.out.println("No matches");
+                System.out.print("Enter a date Of Birth (dd/mm/YYYY) : ");
+                dateOfBirth = scanner.nextLine();
+            }
+        }catch (Exception exception){
+            System.err.println("Error");
+        }
+        return dateOfBirth;
+    }
+    static public String identityCardNumber() {
+        String identityCardNumber = null;
+        try {
+            System.out.print("Enter a identityCardNumber number starting with 0220 and only 12 numbers : ");
+            identityCardNumber = scanner.nextLine();
+            while (!Pattern.matches("^0220\\d{8}$", identityCardNumber)) {
+                System.out.println("No matches");
+                System.out.print("Enter a identityCardNumber number starting with 0220 and only 12 numbers: ");
+                identityCardNumber = scanner.nextLine();
+            }
+        }catch (Exception exception){
+            System.err.println("Error");
+        }
+        return identityCardNumber;
     }
     public static String inputEmail() {
         String email = null;

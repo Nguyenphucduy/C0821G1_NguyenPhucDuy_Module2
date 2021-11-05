@@ -174,39 +174,39 @@ public class FuramaController {
 
                 }
             } while (choice != 6);
-            List<Service> employeeList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv");
+            List<Object> employeeList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv");
             System.err.println(" employee ------------------------------------------------------------------");
-            for (Service service : employeeList) {
+            for (Object service : employeeList) {
                 System.err.println(service);
             }
-            List<Service> customerList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv");
+            List<Object> customerList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv");
             System.err.println("customer ------------------------------------------------------------------");
-            for (Service service : customerList) {
+            for (Object service : customerList) {
                 System.err.println(service);
             }
-            List<Service> roomList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv");
+            List<Object> roomList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv");
             System.err.println("room -------------------------------------------------------------------");
-            for (Service service : roomList) {
+            for (Object service : roomList) {
                 System.err.println(service);
             }
-            List<Service> houseList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\house.csv");
+            List<Object> houseList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\house.csv");
             System.err.println("house -------------------------------------------------------------------");
-            for (Service service : houseList) {
+            for (Object service : houseList) {
                 System.err.println(service);
             }
-            List<Service> villaList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\villa.csv");
+            List<Object> villaList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\villa.csv");
             System.err.println("villa -------------------------------------------------------------------");
-            for (Service service : villaList) {
+            for (Object service : villaList) {
                 System.err.println(service);
             }
-            List<Service> bookingList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\booking.csv");
+            List<Object> bookingList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\booking.csv");
             System.err.println("booking-------------------------------------------------------------------");
-            for (Service service : bookingList) {
+            for (Object service : bookingList) {
                 System.err.println(service);
             }
-            List<Service> contractList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\contract.csv");
+            List<Object> contractList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\contract.csv");
             System.err.println("villa contract -------------------------------------------------------------------");
-            for (Service service : contractList) {
+            for (Object service : contractList) {
                 System.err.println(service);
             }
         }catch (Exception exception){

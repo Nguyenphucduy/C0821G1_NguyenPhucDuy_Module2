@@ -1,9 +1,6 @@
 package case_study.furama_resort.services.impl;
 
-import case_study.furama_resort.models.Facility;
-import case_study.furama_resort.models.House;
-import case_study.furama_resort.models.Room;
-import case_study.furama_resort.models.Villa;
+import case_study.furama_resort.models.*;
 import case_study.furama_resort.services.FacilityService;
 import case_study.furama_resort.services.HouseService;
 import case_study.furama_resort.services.RoomService;
@@ -12,10 +9,7 @@ import case_study.furama_resort.untils.FileWriteRead;
 import case_study.furama_resort.untils.Validate;
 
 import java.io.IOException;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService, HouseService, RoomService, VillaService {
     private static Map<Facility, Integer> linkedHashmap;
@@ -24,9 +18,19 @@ public class FacilityServiceImpl implements FacilityService, HouseService, RoomS
 
     public FacilityServiceImpl() throws IOException {
         linkedHashmap = new LinkedHashMap<>();
-//        linkedHashmap.put((Facility) fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\house.csv"),1);
-//        linkedHashmap.put((Facility) fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv"),1);
-//        linkedHashmap.put((Facility) fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\villa.csv"),1);
+        List<Object> objectList1,objectList2,objectList3; // tạo 1 list Object nhận về giá trị của File và ép kiểu từng đối tượng đó sang kiểu employee
+        objectList1 = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\villa.csv");
+        objectList2 = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\house.csv");
+        objectList3 = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv");
+        for (Object o : objectList1){
+            linkedHashmap.put((Facility) o,1);
+        }
+        for (Object o : objectList2){
+            linkedHashmap.put((Facility) o,1);
+        }
+        for (Object o : objectList3){
+            linkedHashmap.put((Facility) o,1);
+        }
     }
 
     public static Map<Facility, Integer> getLinkedHashmap() {

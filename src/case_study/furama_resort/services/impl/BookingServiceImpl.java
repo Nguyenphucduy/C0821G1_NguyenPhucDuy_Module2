@@ -7,6 +7,7 @@ import case_study.furama_resort.untils.FileWriteRead;
 import case_study.furama_resort.untils.Validate;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -19,6 +20,11 @@ public class BookingServiceImpl implements BookingService {
 
     public BookingServiceImpl() throws IOException {
         bookingSet = new TreeSet<>();
+        List<Object> objectList; // tạo 1 list Object nhận về giá trị của File và ép kiểu từng đối tượng
+        objectList = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\booking.csv");
+        for (Object o : objectList){
+            bookingSet.add((Booking) o);
+        }
     }
 
     public static Set<Booking> getBookingSet() {
@@ -37,12 +43,12 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public void addBooking() throws IOException {
+    public void addBooking() {
         try {
             System.out.print("Enter the booking Code: ");
             String bookingCode = scanner.nextLine();
-            int startDay = Validate.inputDay();
-            int endDay = Validate.inputDay();
+            int startDay = Validate.inputStartDay();
+            int endDay = Validate.inputEndDay();
             System.out.println("List Customer -------------------------");
             customerService.displayCustomerList();
             System.out.print("Enter the customer Code: ");

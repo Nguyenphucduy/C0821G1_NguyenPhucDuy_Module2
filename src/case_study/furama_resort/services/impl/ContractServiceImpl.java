@@ -12,8 +12,13 @@ public class ContractServiceImpl implements ContractService {
     Scanner scanner = new Scanner(System.in);
     FileWriteRead fileWriteRead = new FileWriteRead();
 
-    public ContractServiceImpl() {
+    public ContractServiceImpl() throws IOException {
         contractQueue = new ArrayDeque<>();
+        List<Object> objectList; // tạo 1 list Object nhận về giá trị của File và ép kiểu từng đối tượng
+        objectList = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\contract.csv");
+        for (Object o : objectList){
+            contractQueue.add((Contract) o);
+        }
     }
 
     public static Queue<Contract> getContractQueue() {
@@ -33,7 +38,7 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
-    public void addContact() throws IOException {
+    public void addContact() {
         try {
             System.out.print("Enter the contract Some: ");
             int contractSome = Integer.parseInt(scanner.nextLine());

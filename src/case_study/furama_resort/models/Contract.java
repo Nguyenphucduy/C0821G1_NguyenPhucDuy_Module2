@@ -1,8 +1,8 @@
 package case_study.furama_resort.models;
 
-import case_study.furama_resort.services.Service;
 
-public class Contract implements Service {
+
+public class Contract {
     private int contractSome;
     private int bookingCode;
     private double depositAmount;

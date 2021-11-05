@@ -10,11 +10,11 @@ public class Regex {
     public static final String REGEX_EMAIL = "^\\w+@\\w+(\\.\\w+){1,2}$";
     //Số điện thoại
     public static final String REGEX_PHONE_NUMBER = "^84\\d{7}$";
-    public static final String REGEX_CODE = "^[A-Z&&[RVH]]{1}[0-9]+$";
+    public static final String REGEX_CODE = "^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$";
 
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile(REGEX_CODE); //class pattern để use regex
-        String input = "R12";
+        String input = "31/12/2019";
         Matcher matcher = pattern.matcher(input); // check input đầu vào theo regex
         System.out.println(matcher.matches());
     }

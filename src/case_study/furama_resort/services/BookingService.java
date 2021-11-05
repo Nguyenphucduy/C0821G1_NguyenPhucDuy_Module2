@@ -4,5 +4,5 @@ import java.io.IOException;
 
 public interface BookingService extends Service{
     void displayBookingList();
-    void addBooking() throws IOException;
+    void addBooking();
 }

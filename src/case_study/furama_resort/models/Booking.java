@@ -1,10 +1,6 @@
 package case_study.furama_resort.models;
 
-import case_study.furama_resort.services.Service;
-
-import java.util.Comparator;
-
-public class Booking implements Service, Comparable<Booking> {
+public class Booking implements Comparable<Booking> {
     private String bookingCode;
     private int startDay;
     private int endDay;

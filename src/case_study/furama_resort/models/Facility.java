@@ -3,7 +3,7 @@ package case_study.furama_resort.models;
 
 import case_study.furama_resort.services.Service;
 
-public abstract class Facility implements Service {
+public abstract class Facility  {
     private String codeService;
     private String nameService;
     private double usableArea;

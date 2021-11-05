@@ -17,7 +17,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public EmployeeServiceImpl() throws IOException {
         employeeList = new ArrayList<>();
-//        employeeList.add((Employee) fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv"));
+        List<Object> objectList; // tạo 1 list Object nhận về giá trị của File và ép kiểu từng đối tượng đó sang kiểu employee
+        objectList = fileWriteRead.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv");
+        for (Object o : objectList){
+            employeeList.add((Employee) o);
+        }
     }
 
     public static List<Employee> getEmployeeList() {
@@ -36,15 +40,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void addEmployee() throws IOException {
+    public void addEmployee() {
         try {
             System.out.print("Enter the full name: ");
             String fullName = scanner.nextLine();
-            System.out.print("Enter the date of birth :  ");
-            String dateOfBirth = scanner.nextLine();
+            String dateOfBirth = Validate.inputDateOfBirth();
             String gender = Validate.inputGender();
-            System.out.print("Enter the identity Card Number: ");
-            String identityCardNumber = scanner.nextLine();
+            String identityCardNumber = Validate.identityCardNumber();
             String phoneNumber = Validate.inputPhoneNumber();
             String email = Validate.inputEmail();
             System.out.print("Enter the employee Code: ");
@@ -61,7 +63,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void updateEmployee() throws IOException {
+    public void updateEmployee() {
         try {
             System.out.print("Enter the index you want update : ");
             int index = Integer.parseInt(scanner.nextLine());
@@ -73,13 +75,11 @@ public class EmployeeServiceImpl implements EmployeeService {
                 System.out.print("Enter the update full name: ");
                 String fullName = scanner.nextLine();
                 employeeList.get(index).setFullName(fullName);
-                System.out.print("Enter the update date of birth :  ");
-                String dateOfBirth = scanner.nextLine();
+                String dateOfBirth = Validate.inputDateOfBirth();
                 employeeList.get(index).setDateOfBirth(dateOfBirth);
                 String gender = Validate.inputGender();
                 employeeList.get(index).setGender(gender);
-                System.out.print("Enter the update identity Card Number: ");
-                String identityCardNumber = scanner.nextLine();
+                String identityCardNumber = Validate.identityCardNumber();
                 employeeList.get(index).setIdentityCardNumber(identityCardNumber);
                 String phoneNumber = Validate.inputPhoneNumber();
                 employeeList.get(index).setPhoneNumber(phoneNumber);
