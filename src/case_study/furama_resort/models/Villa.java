@@ -8,6 +8,10 @@ public class Villa extends Facility {
     public Villa() {
     }
 
+    public Villa(String codeService) {
+        super(codeService);
+    }
+
     public Villa(String codeService, String nameService, double usableArea, double rentCost, int numberOfPeople, String rentalType) {
         super(codeService, nameService, usableArea, rentCost, numberOfPeople, rentalType);
     }

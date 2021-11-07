@@ -1,7 +1,6 @@
 package case_study.furama_resort.models;
 
-
-import case_study.furama_resort.services.Service;
+import java.util.Objects;
 
 public abstract class Facility  {
     private String codeService;
@@ -12,6 +11,10 @@ public abstract class Facility  {
     private String rentalType;
 
     public Facility() {
+    }
+
+    public Facility(String codeService) {
+        this.codeService = codeService;
     }
 
     public Facility(String codeService, String nameService, double usableArea, double rentCost, int numberOfPeople, String rentalType) {
@@ -74,5 +77,19 @@ public abstract class Facility  {
     @Override
     public String toString() {
         return this.codeService + "," + this.nameService + "," + this.usableArea + "," + this.rentCost + "," + this.numberOfPeople + "," + this.rentalType;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Facility)){
+            return false;
+        }
+        Facility facility = (Facility) obj;
+
+        return this.codeService.equals(facility.codeService);// 2 đối tượng có codeService bằng nhau thì bằng nhau
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codeService);
     }
 }

@@ -7,7 +7,6 @@ public class Booking implements Comparable<Booking> {
     private String customerCode;
     private String serviceName;
     private String serviceType;
-
     public Booking() {
     }
 
@@ -79,10 +78,9 @@ public class Booking implements Comparable<Booking> {
         if(!(obj instanceof Booking)){
             return false;
         }
-
         Booking booking = (Booking) obj;
 
-        return this.startDay == booking.getStartDay();
+        return this.bookingCode.equals(booking.bookingCode);// 2 đối tượng có bookingCode bằng nhau thì bằng nhau
     }
 
     @Override

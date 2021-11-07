@@ -1,7 +1,5 @@
 package case_study.furama_resort.untils;
 
-import case_study.furama_resort.untils.excepcition.MyException;
-
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -11,31 +9,66 @@ public class Validate {
     public static String inputCodeService() {
         String codeService = null;
         try {
-            System.out.print("Enter the code service : ");
+            System.out.print("Enter the code service start RO , VI or HO and 4 numbers: ");
             codeService = scanner.nextLine();
-            if (codeService.length() == 0) {
-                throw new MyException("not null");
-            }
-            while (!Pattern.matches("^[A-Z&&[RVH]]{1}[0-9]+$", codeService)) {
+            while (!Pattern.matches("^(VL|HO|RO)\\d{4}$", codeService)) {
                 System.out.print("Enter the code service : ");
                 codeService = scanner.nextLine();
             }
-        } catch (MyException myException) {
-            System.out.println(myException.getMessage());
         } catch (Exception exception) {
             System.err.println("Error");
         }
         return codeService;
     }
+    public static String inputCustomerCode() {
+        String customerCode = null;
+        try {
+            System.out.print("Enter the customer Code start C and numbers : ");
+            customerCode = scanner.nextLine();
+            while (!Pattern.matches("^[A-Z&&[C]]{1}[0-9]+$", customerCode)) {
+                System.out.print("Enter the customer Code start C and number : ");
+                customerCode = scanner.nextLine();
+            }
+        } catch (Exception exception) {
+            System.err.println("Error");
+        }
+        return customerCode;
+    }
+    public static String inputBookingCode() {
+        String BookingCode = null;
+        try {
+            System.out.print("Enter the Booking Code start B and numbers : ");
+            BookingCode = scanner.nextLine();
+            while (!Pattern.matches("^[A-Z&&[B]]{1}[0-9]+$", BookingCode)) {
+                System.out.print("Enter the Booking Code start B and number : ");
+                BookingCode = scanner.nextLine();
+            }
+        } catch (Exception exception) {
+            System.err.println("Error");
+        }
+        return BookingCode;
+    }
+
 
     public static String inputNameService() {
         String nameService = null;
+        System.out.println("Choice  roomStandard ");
+        System.out.println("1. Villa");
+        System.out.println("2. House");
+        System.out.println("3. Room");
+        System.out.print("Enter your choice : ");
         try {
-            System.out.print("Enter the name service : ");
-            nameService = scanner.nextLine();
-            while (!Pattern.matches("^[A-Z]{1}[a-z]+$", nameService)) {
-                System.out.print("Enter the name service : ");
-                nameService = scanner.nextLine();
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    nameService = "Villa";
+                    break;
+                case 2:
+                    nameService = "House";
+                    break;
+                case 3:
+                    nameService = "Room";
+                    break;
             }
         } catch (Exception exception) {
             System.err.println("Error");
@@ -49,7 +82,12 @@ public class Validate {
             do {
                 System.out.print("Enter the Area  > 30: ");
                 area = Double.parseDouble(scanner.nextLine());
+                if (area < 0) {
+                    throw new numberLessThan0("the number you enter is less than 0");
+                }
             } while (area < 30);
+        }catch (numberLessThan0 numberFormat){
+            numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
         }
@@ -62,7 +100,12 @@ public class Validate {
             do {
                 System.out.print("Enter the rent Cost > 0: ");
                 rentCost = Double.parseDouble(scanner.nextLine());
+                if (rentCost < 0) {
+                    throw new numberLessThan0("the number you enter is less than 0");
+                }
             } while (rentCost < 0);
+        }catch (numberLessThan0 numberFormat){
+            numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
         }
@@ -109,10 +152,13 @@ public class Validate {
     public static int inputNumberOfFloor() {
         int numberOfFloors = 0;
         try {
-            do {
-                System.out.print("Enter the number Of Floors > 0: ");
-                numberOfFloors = Integer.parseInt(scanner.nextLine());
-            } while (numberOfFloors < 0);
+            System.out.print("Enter the number Of Floors > 0: ");
+            numberOfFloors = Integer.parseInt(scanner.nextLine());
+            if (numberOfFloors < 0) {
+                throw new numberLessThan0("the number you enter is less than 0");
+            }
+        }catch (numberLessThan0 numberFormat){
+            numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
         }
@@ -124,7 +170,12 @@ public class Validate {
             do {
                 System.out.print("Enter the salary > 0: ");
                 salary = Double.parseDouble(scanner.nextLine());
+                if (salary < 0) {
+                    throw new numberLessThan0("the number you enter is less than 0");
+                }
             } while (salary < 0);
+        }catch (numberLessThan0 numberFormat){
+            numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
         }
@@ -167,7 +218,7 @@ public class Validate {
 
     public static String inputRentalType() {
         String rentalType = null;
-        System.out.println("Choice  rentalType ");
+        System.out.println("Choice  rental Type ");
         System.out.println("1. rent by the hour");
         System.out.println("2. rent by the day");
         System.out.println("3. rent by the month");
@@ -195,29 +246,33 @@ public class Validate {
         return rentalType;
     }
     public static String inputServiceType() {
-        String ServiceType = null;
+        String serviceType = null;
         System.out.println("Choice  Service Type ");
-        System.out.println("1. New Villa");
-        System.out.println("2. New House");
-        System.out.println("3. New Room");
+        System.out.println("1. the hour");
+        System.out.println("2. the day");
+        System.out.println("3. the month");
+        System.out.println("4. the year");
         System.out.print("Enter your choice : ");
         try {
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    ServiceType = "Villa";
+                    serviceType = "hour";
                     break;
                 case 2:
-                    ServiceType = "House";
+                    serviceType = "day";
                     break;
                 case 3:
-                    ServiceType = "Room";
+                    serviceType = "month";
+                    break;
+                case 4:
+                    serviceType = "year";
                     break;
             }
         } catch (Exception exception) {
             System.err.println("Error");
         }
-        return ServiceType;
+        return serviceType;
     }
     public static String inputStandard() {
         String standard = null;

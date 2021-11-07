@@ -32,12 +32,6 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerServiceImpl.customerList = customerList;
     }
 
-    @Override
-    public void displayCustomerList() {
-        for (Customer customer : customerList) {
-            System.out.println(customer.toString());
-        }
-    }
 
     @Override
     public void addCustomer() throws IOException {
@@ -49,8 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
             String identityCardNumber = Validate.identityCardNumber();
             String phoneNumber = Validate.inputPhoneNumber();
             String email = Validate.inputEmail();
-            System.out.print("Enter the customer Code: ");
-            String customerCode = scanner.nextLine();
+            String customerCode = Validate.inputCustomerCode();
             String customerType = Validate.inputCustomerType();
             System.out.print("Enter the address : ");
             String address = scanner.nextLine();
@@ -85,8 +78,7 @@ public class CustomerServiceImpl implements CustomerService {
                 customerList.get(index).setPhoneNumber(phoneNumber);
                 String email = Validate.inputEmail();
                 customerList.get(index).setEmail(email);
-                System.out.print("Enter update the customer code: ");
-                String customerCode = scanner.nextLine();
+                String customerCode = Validate.inputCustomerCode();
                 customerList.get(index).setCustomerCode(customerCode);
                 String customerType = Validate.inputCustomerType();
                 customerList.get(index).setCustomerType(customerType);
@@ -102,4 +94,19 @@ public class CustomerServiceImpl implements CustomerService {
             System.err.println("Error");
         }
     }
+
+    @Override
+    public void displayCustomerCode() {
+        for (Customer customer : customerList) {
+            System.out.println(customer.getCustomerCode());
+        }
+    }
+
+    @Override
+    public void displayList() {
+        for (Customer customer : customerList) {
+            System.out.println(customer);
+        }
+    }
+
 }

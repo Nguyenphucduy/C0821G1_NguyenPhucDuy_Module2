@@ -32,12 +32,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         EmployeeServiceImpl.employeeList = employeeList;
     }
 
-    @Override
-    public void displayEmployeeList() {
-        for (Employee employee : employeeList) {
-            System.out.println(employee.toString());
-        }
-    }
 
     @Override
     public void addEmployee() {
@@ -101,6 +95,13 @@ public class EmployeeServiceImpl implements EmployeeService {
             System.out.print(employeeList.get(index));
         }catch (Exception e){
             System.out.println("Error");
+        }
+    }
+
+    @Override
+    public void displayList() {
+        for (Employee employee : employeeList) {
+            System.out.println(employee.toString());
         }
     }
 }

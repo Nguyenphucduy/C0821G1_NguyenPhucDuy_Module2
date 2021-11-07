@@ -1,10 +1,11 @@
 package case_study.furama_resort.models;
 
 
+import java.util.Objects;
 
 public class Contract {
     private int contractSome;
-    private int bookingCode;
+    private String bookingCode;
     private double depositAmount;
     private double totalPaymentAmount;
     private String customerCode;
@@ -12,7 +13,7 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(int contractSome, int bookingCode, double depositAmount, double totalPaymentAmount, String customerCode) {
+    public Contract(int contractSome, String bookingCode, double depositAmount, double totalPaymentAmount, String customerCode) {
         this.contractSome = contractSome;
         this.bookingCode = bookingCode;
         this.depositAmount = depositAmount;
@@ -28,11 +29,11 @@ public class Contract {
         this.contractSome = contractSome;
     }
 
-    public int getBookingCode() {
+    public String getBookingCode() {
         return bookingCode;
     }
 
-    public void setBookingCode(int bookingCode) {
+    public void setBookingCode(String bookingCode) {
         this.bookingCode = bookingCode;
     }
 
@@ -58,6 +59,20 @@ public class Contract {
 
     public void setCustomerCode(String customerCode) {
         this.customerCode = customerCode;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if(!(o instanceof Contract)){
+            return false;
+        }
+        Contract contract = (Contract) o;
+        return bookingCode.equals(contract.bookingCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookingCode);
     }
 
     @Override

@@ -2,10 +2,8 @@ package case_study.furama_resort.controllers;
 
 import case_study.furama_resort.services.*;
 import case_study.furama_resort.services.impl.*;
-import case_study.furama_resort.untils.FileWriteRead;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -20,7 +18,6 @@ public class FuramaController {
         BookingService bookingService = new BookingServiceImpl();
         ContractService contractService = new ContractServiceImpl();
         PromotionService promotionService = new PromotionServiceImpl();
-        FileService fileService = new FileWriteRead();
         try {
             do {
                 System.out.println("Menu");
@@ -44,7 +41,7 @@ public class FuramaController {
                             choice2 = scanner.nextInt();
                             switch (choice2) {
                                 case 1:
-                                    employeeService.displayEmployeeList();
+                                    employeeService.displayList();
                                     break;
                                 case 2:
                                     employeeService.addEmployee();
@@ -70,7 +67,7 @@ public class FuramaController {
                             choice2 = scanner.nextInt();
                             switch (choice2) {
                                 case 1:
-                                    customerService.displayCustomerList();
+                                    customerService.displayList();
                                     break;
                                 case 2:
                                     customerService.addCustomer();
@@ -96,7 +93,7 @@ public class FuramaController {
                             choice2 = scanner.nextInt();
                             switch (choice2) {
                                 case 1:
-                                    facilityService.displayFacilityList();
+                                    facilityService.displayList();
                                     break;
                                 case 2:
                                     facilityService.addFacilityList();
@@ -127,13 +124,13 @@ public class FuramaController {
                                     bookingService.addBooking();
                                     break;
                                 case 2:
-                                    bookingService.displayBookingList();
+                                    bookingService.displayList();
                                     break;
                                 case 3:
                                     contractService.addContact();
                                     break;
                                 case 4:
-                                    contractService.displayContactList();
+                                    contractService.displayList();
                                     break;
                                 case 5:
                                     contractService.updateContact();
@@ -155,7 +152,7 @@ public class FuramaController {
                             choice2 = scanner.nextInt();
                             switch (choice2) {
                                 case 1:
-                                    promotionService.displayPromotionService();
+                                    promotionService.displayList();
                                     break;
                                 case 2:
                                     promotionService.displayPromotionVoucher();
@@ -174,41 +171,6 @@ public class FuramaController {
 
                 }
             } while (choice != 6);
-            List<Object> employeeList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv");
-            System.err.println(" employee ------------------------------------------------------------------");
-            for (Object service : employeeList) {
-                System.err.println(service);
-            }
-            List<Object> customerList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv");
-            System.err.println("customer ------------------------------------------------------------------");
-            for (Object service : customerList) {
-                System.err.println(service);
-            }
-            List<Object> roomList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv");
-            System.err.println("room -------------------------------------------------------------------");
-            for (Object service : roomList) {
-                System.err.println(service);
-            }
-            List<Object> houseList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\house.csv");
-            System.err.println("house -------------------------------------------------------------------");
-            for (Object service : houseList) {
-                System.err.println(service);
-            }
-            List<Object> villaList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\villa.csv");
-            System.err.println("villa -------------------------------------------------------------------");
-            for (Object service : villaList) {
-                System.err.println(service);
-            }
-            List<Object> bookingList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\booking.csv");
-            System.err.println("booking-------------------------------------------------------------------");
-            for (Object service : bookingList) {
-                System.err.println(service);
-            }
-            List<Object> contractList = fileService.readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\contract.csv");
-            System.err.println("villa contract -------------------------------------------------------------------");
-            for (Object service : contractList) {
-                System.err.println(service);
-            }
         }catch (Exception exception){
             System.out.println("Error");
         }

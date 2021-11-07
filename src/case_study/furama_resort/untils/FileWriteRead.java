@@ -54,7 +54,7 @@ public class FileWriteRead implements FileService {
                     booking = new Booking(temp[0], Integer.parseInt(temp[1]), Integer.parseInt(temp[2]), temp[3], temp[4], temp[5]);
                     objectList.add(booking);
                 } else if (temp.length == 5) {
-                    contract = new Contract(Integer.parseInt(temp[0]), Integer.parseInt(temp[1]), Double.parseDouble(temp[2]), Double.parseDouble(temp[3]), (temp[4]));
+                    contract = new Contract(Integer.parseInt(temp[0]),temp[1], Double.parseDouble(temp[2]), Double.parseDouble(temp[3]), (temp[4]));
                     objectList.add(contract);
                 }
 
@@ -64,5 +64,44 @@ public class FileWriteRead implements FileService {
             e.printStackTrace();
         }
         return objectList;
+    }
+
+    @Override
+    public void displayList() throws IOException {
+        List<Object> employeeList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv");
+        System.err.println(" employee ------------------------------------------------------------------");
+        for (Object service : employeeList) {
+            System.err.println(service);
+        }
+        List<Object> customerList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv");
+        System.err.println("customer ------------------------------------------------------------------");
+        for (Object service : customerList) {
+            System.err.println(service);
+        }
+        List<Object> roomList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv");
+        System.err.println("room -------------------------------------------------------------------");
+        for (Object service : roomList) {
+            System.err.println(service);
+        }
+        List<Object> houseList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\house.csv");
+        System.err.println("house -------------------------------------------------------------------");
+        for (Object service : houseList) {
+            System.err.println(service);
+        }
+        List<Object> villaList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\villa.csv");
+        System.err.println("villa -------------------------------------------------------------------");
+        for (Object service : villaList) {
+            System.err.println(service);
+        }
+        List<Object> bookingList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\booking.csv");
+        System.err.println("booking-------------------------------------------------------------------");
+        for (Object service : bookingList) {
+            System.err.println(service);
+        }
+        List<Object> contractList = readBuffer("E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\contract.csv");
+        System.err.println("villa contract -------------------------------------------------------------------");
+        for (Object service : contractList) {
+            System.err.println(service);
+        }
     }
 }
