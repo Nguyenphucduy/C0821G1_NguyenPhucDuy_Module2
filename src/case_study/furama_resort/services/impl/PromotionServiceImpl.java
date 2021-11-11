@@ -15,7 +15,7 @@ public class PromotionServiceImpl implements PromotionService {
 
     public PromotionServiceImpl() {
         bookingTreeSet = new TreeSet<>();
-        customerStack = new Stack<String>();
+        customerStack = new Stack<>();
     }
 
     public static Set<Booking> getBookingTreeSet() {

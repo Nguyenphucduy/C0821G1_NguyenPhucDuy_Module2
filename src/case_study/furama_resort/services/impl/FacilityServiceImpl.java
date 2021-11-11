@@ -48,8 +48,8 @@ public class FacilityServiceImpl implements FacilityService, HouseService, RoomS
         Facility index = null;
         for (Facility facility : facilities) {
             if (linkedHashmap.get(facility) >= 5) {
-                check = true;
                 index = facility;
+                check = true;
                 break;
             } else {
                 check = false;
@@ -111,7 +111,7 @@ public class FacilityServiceImpl implements FacilityService, HouseService, RoomS
             double usableArea = Validate.inputArea();
             double rentCost = Validate.inputRentCost();
             int numberOfPeople = Validate.inputNumberOfPeople();
-            String rentalType = Validate.inputRentalType();
+            String rentalType = Validate.inputServiceType();
             String roomStandard = Validate.inputRoomStandard();
             int numberOfFloors = Validate.inputNumberOfFloor();
             House house = new House(codeService, nameService, usableArea, rentCost, numberOfPeople, rentalType, roomStandard, numberOfFloors);
@@ -126,13 +126,12 @@ public class FacilityServiceImpl implements FacilityService, HouseService, RoomS
             double usableArea = Validate.inputArea();
             double rentCost = Validate.inputRentCost();
             int numberOfPeople = Validate.inputNumberOfPeople();
-            String rentalType = Validate.inputRentalType();
+            String rentalType = Validate.inputServiceType();
             System.out.print("Enter the service Free: ");
             String serviceFree = scanner.nextLine();
             Room room = new Room(codeService, nameService, usableArea, rentCost, numberOfPeople, rentalType, serviceFree);
             fileWriteRead.writeBuffer(room, "E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\room.csv");
             return room;
-
         }
 
         @Override
@@ -142,7 +141,7 @@ public class FacilityServiceImpl implements FacilityService, HouseService, RoomS
             double usableArea = Validate.inputArea();
             double rentCost = Validate.inputRentCost();
             int numberOfPeople = Validate.inputNumberOfPeople();
-            String rentalType = Validate.inputRentalType();
+            String rentalType = Validate.inputServiceType();
             String roomStandard = Validate.inputRoomStandard();
             double poolArea = Validate.inputArea();
             int numberOfFloors = Validate.inputNumberOfFloor();

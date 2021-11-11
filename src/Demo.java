@@ -1,5 +1,6 @@
-import java.util.Scanner;
-
-public class Demo {
-
+class Char {
+    public static void main(String args[]) {
+    }
 }
+
+      

@@ -68,16 +68,15 @@ public class ContractServiceImpl implements ContractService {
     @Override
     public void updateContact() {
         boolean check = true;
+        Contract contractFix = null;
+        System.out.println("contract list start  ------------------------------------------");
+        displayList();
+        System.out.println("contract list end  --------------------------------------------");
         System.out.print("Enter the contract some : ");
         int contractSome = Integer.parseInt(scanner.nextLine());
         for (Contract contract : contractQueue) {
             if (contractSome == contract.getContractSome()) {
-                System.out.print("Enter the deposit Amount : ");
-                double depositAmount = Double.parseDouble(scanner.nextLine());
-                contract.setDepositAmount(depositAmount);
-                System.out.print("Enter the total Payment Amount: ");
-                int totalPaymentAmount = scanner.nextInt();
-                contract.setTotalPaymentAmount(totalPaymentAmount);
+                contractFix = contract;
                 check = true;
                 break;
             } else {
@@ -86,6 +85,14 @@ public class ContractServiceImpl implements ContractService {
         }
         if (!check) {
             System.err.println("not found contract");
+        }else {
+            System.out.print("Enter the deposit Amount : ");
+            double depositAmount = Double.parseDouble(scanner.nextLine());
+            assert contractFix != null;
+            contractFix.setDepositAmount(depositAmount);
+            System.out.print("Enter the total Payment Amount: ");
+            int totalPaymentAmount = scanner.nextInt();
+            contractFix.setTotalPaymentAmount(totalPaymentAmount);
         }
     }
 

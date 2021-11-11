@@ -9,9 +9,7 @@ import review.week5.service.*;
 import review.week5.common.Validate;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class CandidateService implements ICandidateService, IExperienceService, IFresherService, IInternService {
 
@@ -142,7 +140,7 @@ public class CandidateService implements ICandidateService, IExperienceService, 
         String name = scanner.nextLine();
         for (int i = 0; i < candidateList.size(); i++) {
             // contain() tìm kiếm 1 phần
-            if (candidateList.get(i).getFirstName().equals(name) || candidateList.get(i).getLastName().equals(name)) {
+            if (candidateList.get(i).getFirstName().contains(name) || candidateList.get(i).getLastName().contains(name)) {
                 index = i;
                 check = true;
                 break; // nếu ko break hắn sẽ chạy đến phần tử cuối cùng
@@ -155,6 +153,56 @@ public class CandidateService implements ICandidateService, IExperienceService, 
         } else {
             System.out.println("searched ---------------------------------------------");
             System.out.println(candidateList.get(index));
+        }
+    }
+
+    @Override
+    public void remove() {
+        System.out.println("list of Candidate Start  ---------------------------- ");
+        for (int i = 0; i < candidateList.size(); i++) {
+            System.out.println(candidateList.get(i));
+        }
+        System.out.println("list of Candidate End   ---------------------------- ");
+        System.out.print("Enter the id you want remove : ");
+        String id = scanner.nextLine();
+        Candidate candidateFix = null;
+        for (Candidate candidate : candidateList) {
+            if (id.equals(candidate.getId())) {
+                candidateFix = candidate;
+            }
+        }
+        candidateList.remove(candidateFix);
+        System.out.println("Remove done ----------------------------");
+    }
+
+    @Override
+    public void sort() {
+        boolean check = true;
+        while (check) {
+            System.out.println("Enter the criteria you want to sort");
+            System.out.println("1. Sort with id");
+            System.out.println("2. Sort with year of birth ");
+            System.out.println("3. Return the menu ");
+            System.out.print(" Enter the choice : ");
+            int choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    Collections.sort(candidateList, new SortCandidateByID());
+                    System.out.println("list of your -----------------------");
+                    showAll();
+                    break;
+                case 2:
+                    Collections.sort(candidateList, new SortCandidateByYearOfBirth());
+                    System.out.println("list of your -----------------------");
+                    showAll();
+                    break;
+                case 3:
+                    check = false;
+                    break;
+                default:
+                    System.out.println("no choice");
+                    break;
+            }
         }
     }
 }

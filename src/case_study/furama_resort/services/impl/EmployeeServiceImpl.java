@@ -89,10 +89,9 @@ public class EmployeeServiceImpl implements EmployeeService {
                 double salary = Validate.inputSalary();
                 employeeList.get(index).setSalary(salary);
                 employeeList.set(index, employeeList.get(index));
-                fileWriteRead.writeBuffer(employeeList.get(index), "E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\employee.csv");
             }
             System.out.println("update done ---------------------------------------------------------");
-            System.out.print(employeeList.get(index));
+            System.out.println(employeeList.get(index));
         }catch (Exception e){
             System.out.println("Error");
         }

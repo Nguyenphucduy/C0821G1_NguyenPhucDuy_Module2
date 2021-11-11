@@ -1,5 +1,7 @@
 package l11_map_and_tree.exercise.practice_arraylist_linkedlist.model;
 
+import java.util.Objects;
+
 public class Product {
     private String name;
     private Double price;
@@ -56,16 +58,17 @@ public class Product {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null || !(obj instanceof Product)){
+        if(!(obj instanceof Product)){
             return false;
         }
 
         Product otherStudent = (Product) obj;
 
-        if(this.id == otherStudent.getId()){
-            return true;
-        }
-        return false;
+        return this.id == otherStudent.getId();
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

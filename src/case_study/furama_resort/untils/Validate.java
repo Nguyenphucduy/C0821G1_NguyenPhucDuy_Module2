@@ -20,6 +20,7 @@ public class Validate {
         }
         return codeService;
     }
+
     public static String inputCustomerCode() {
         String customerCode = null;
         try {
@@ -34,6 +35,7 @@ public class Validate {
         }
         return customerCode;
     }
+
     public static String inputBookingCode() {
         String BookingCode = null;
         try {
@@ -86,7 +88,7 @@ public class Validate {
                     throw new numberLessThan0("the number you enter is less than 0");
                 }
             } while (area < 30);
-        }catch (numberLessThan0 numberFormat){
+        } catch (numberLessThan0 numberFormat) {
             numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
@@ -104,7 +106,7 @@ public class Validate {
                     throw new numberLessThan0("the number you enter is less than 0");
                 }
             } while (rentCost < 0);
-        }catch (numberLessThan0 numberFormat){
+        } catch (numberLessThan0 numberFormat) {
             numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
@@ -124,6 +126,7 @@ public class Validate {
         }
         return numberOfPeople;
     }
+
     public static int inputStartDay() {
         int startDay = 0;
         try {
@@ -136,6 +139,7 @@ public class Validate {
         }
         return startDay;
     }
+
     public static int inputEndDay() {
         int endDay = 0;
         try {
@@ -157,13 +161,14 @@ public class Validate {
             if (numberOfFloors < 0) {
                 throw new numberLessThan0("the number you enter is less than 0");
             }
-        }catch (numberLessThan0 numberFormat){
+        } catch (numberLessThan0 numberFormat) {
             numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
         }
         return numberOfFloors;
     }
+
     public static double inputSalary() {
         double salary = 0;
         try {
@@ -174,7 +179,7 @@ public class Validate {
                     throw new numberLessThan0("the number you enter is less than 0");
                 }
             } while (salary < 0);
-        }catch (numberLessThan0 numberFormat){
+        } catch (numberLessThan0 numberFormat) {
             numberFormat.getMessage();
         } catch (Exception exception) {
             System.err.println("Error");
@@ -216,35 +221,6 @@ public class Validate {
         return roomStandard;
     }
 
-    public static String inputRentalType() {
-        String rentalType = null;
-        System.out.println("Choice  rental Type ");
-        System.out.println("1. rent by the hour");
-        System.out.println("2. rent by the day");
-        System.out.println("3. rent by the month");
-        System.out.println("4. rent by the year");
-        System.out.print("Enter your choice : ");
-        try {
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1:
-                    rentalType = "hour";
-                    break;
-                case 2:
-                    rentalType = "day";
-                    break;
-                case 3:
-                    rentalType = "month";
-                    break;
-                case 4:
-                    rentalType = "year";
-                    break;
-            }
-        } catch (Exception exception) {
-            System.err.println("Error");
-        }
-        return rentalType;
-    }
     public static String inputServiceType() {
         String serviceType = null;
         System.out.println("Choice  Service Type ");
@@ -274,6 +250,7 @@ public class Validate {
         }
         return serviceType;
     }
+
     public static String inputStandard() {
         String standard = null;
         System.out.println("Choice  standard ");
@@ -303,6 +280,7 @@ public class Validate {
         }
         return standard;
     }
+
     public static String inputPlace() {
         String place = null;
         System.out.println("Choice  place ");
@@ -340,6 +318,7 @@ public class Validate {
         }
         return place;
     }
+
     public static String inputCustomerType() {
         String customerType = null;
         System.out.println("Choice  customerType ");
@@ -373,6 +352,7 @@ public class Validate {
         }
         return customerType;
     }
+
     public static String inputGender() {
         String gender = null;
         System.out.println("Choice  gender ");
@@ -394,6 +374,7 @@ public class Validate {
         }
         return gender;
     }
+
     static public String inputPhoneNumber() {
         String phone = null;
         try {
@@ -404,11 +385,12 @@ public class Validate {
                 System.out.print("Enter a phone number starting with 0 : ");
                 phone = scanner.nextLine();
             }
-        }catch (Exception exception){
+        } catch (Exception exception) {
             System.err.println("Error");
         }
         return phone;
     }
+
     static public String inputDateOfBirth() {
         String dateOfBirth = null;
         try {
@@ -419,11 +401,12 @@ public class Validate {
                 System.out.print("Enter a date Of Birth (dd/mm/YYYY) : ");
                 dateOfBirth = scanner.nextLine();
             }
-        }catch (Exception exception){
+        } catch (Exception exception) {
             System.err.println("Error");
         }
         return dateOfBirth;
     }
+
     static public String identityCardNumber() {
         String identityCardNumber = null;
         try {
@@ -434,11 +417,12 @@ public class Validate {
                 System.out.print("Enter a identityCardNumber number starting with 0220 and only 12 numbers: ");
                 identityCardNumber = scanner.nextLine();
             }
-        }catch (Exception exception){
+        } catch (Exception exception) {
             System.err.println("Error");
         }
         return identityCardNumber;
     }
+
     public static String inputEmail() {
         String email = null;
         try {
@@ -448,7 +432,7 @@ public class Validate {
                 System.out.print("Enter the email : ");
                 email = scanner.nextLine();
             }
-        }catch (Exception exception){
+        } catch (Exception exception) {
             System.err.println("Error");
         }
         return email;

@@ -12,11 +12,6 @@ public class ProductLinkedListTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LinkedList<Product> listProduct = new LinkedList<Product>();
-        Product product2 = new Product("Apple",1.0,1);
-        Product product3 = new Product("Samsung",2.0,2);
-
-        listProduct.add(product2);
-        listProduct.add(product3);
         int choose;
         do {
             System.out.println(" (Product Management Use LinkedList ) Please choose function : ");
@@ -40,7 +35,7 @@ public class ProductLinkedListTest {
                     System.out.print("Enter the id product : ");
                     int id = Integer.parseInt(scanner.nextLine());
 
-                    Product product = new Product(name,price, id);
+                    Product product = new Product(name, price, id);
                     listProduct.add(product);
 
                     break;
@@ -50,7 +45,6 @@ public class ProductLinkedListTest {
                     System.out.print("Enter the index you want edit : ");
                     index = Integer.parseInt(scanner.nextLine());
                     if (index >= 0 && index <= listProduct.size()) {
-                        listProduct.get(index);
                         System.out.println("Enter the information you want to edit");
                         System.out.print("Enter the name edit : ");
                         String nameFix = scanner.nextLine();
@@ -77,17 +71,17 @@ public class ProductLinkedListTest {
                     System.out.print("Enter the Product id you want to check : ");
                     int idCheck = Integer.parseInt(scanner.nextLine());
                     boolean check = false;
-                    for (int i = 0 ; i < listProduct.size() ; i++){
-                        if (idCheck==listProduct.get(i).getId()){
+                    for (int i = 0; i < listProduct.size(); i++) {
+                        if (idCheck == listProduct.get(i).getId()) {
                             idCheck = i;
                             check = true;
-                        }else {
+                        } else {
                             check = false;
                         }
                     }
                     if (check) {
                         System.out.println(" Have product with your id in the LinkedList is : " + listProduct.get(idCheck));
-                    }else {
+                    } else {
                         System.err.println("your id was not found in the LinkedList");
                     }
 
@@ -102,13 +96,11 @@ public class ProductLinkedListTest {
                     break;
 
                 case 7:
-                    System.exit(7);
+                    break;
                 default:
                     System.out.println("No choice!");
             }
         }
         while (choose != 7);
-
-
     }
 }

@@ -1,6 +1,8 @@
 package review.week5.model;
 
-public abstract class Candidate {
+import java.util.Objects;
+
+public abstract class Candidate implements Comparable<Candidate>{
     private String id;
     private String firstName;
     private String lastName;
@@ -82,5 +84,24 @@ public abstract class Candidate {
     @Override
     public String toString() {
         return this.id + "," + this.firstName + "," + this.lastName + "," + this.yearOfBirth +"," + this.address + "," + this.phone + "," + this.email  ;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Candidate)) {
+            return false;
+        }
+        Candidate candidate = (Candidate) o;
+        return this.id.equals(candidate.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public int compareTo(Candidate o) {
+        return this.id.compareTo(o.id);
     }
 }

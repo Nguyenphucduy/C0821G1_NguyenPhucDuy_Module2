@@ -69,12 +69,6 @@ public class ProductManager {
 
 
     public boolean isExist(Product product) {
-//        if(studentList.contains(student)){
-//            return true;
-//        } else {
-//            return false;
-//        }
-
         return productList.contains(product);
     }
 
@@ -85,7 +79,7 @@ public class ProductManager {
      * @return
      */
 
-    public Product getProductInfo(int id) {
+    public Product getProductID(int id) {
         int index = productList.indexOf(new Product(id));
 
         if (index == -1) {
@@ -115,4 +109,5 @@ public class ProductManager {
         productList.sort(Comparator.comparingDouble(Product::getPrice));
         System.out.println(productList);
     }
+
 }

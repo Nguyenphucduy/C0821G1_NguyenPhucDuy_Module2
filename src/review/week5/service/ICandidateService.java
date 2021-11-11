@@ -8,4 +8,6 @@ import java.util.List;
 public interface ICandidateService {
     void showAll();
     void search();
+    void remove();
+    void sort();
 }

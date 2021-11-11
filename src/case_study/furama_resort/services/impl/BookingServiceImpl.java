@@ -53,7 +53,7 @@ public class BookingServiceImpl implements BookingService {
             facilityService.displayList();
             System.out.println("List Service End --------------------------------------------------------");
             System.out.println("code service");
-            String choice = scanner.nextLine();
+            String choice = scanner.nextLine(); // constructor 1 tham so code service
             if (choice.startsWith("V")) {
                 Facility facility = new Villa(choice);
                 if (FacilityServiceImpl.getLinkedHashmap().containsKey(facility)) {

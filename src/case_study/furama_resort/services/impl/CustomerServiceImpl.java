@@ -34,7 +34,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 
     @Override
-    public void addCustomer() throws IOException {
+    public void addCustomer() {
         try {
             System.out.print("Enter the full name: ");
             String fullName = scanner.nextLine();
@@ -56,15 +56,15 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void updateCustomer() throws IOException {
+    public void updateCustomer() {
         try {
             System.out.print("Enter the index you want update : ");
             int index = Integer.parseInt(scanner.nextLine());
             index = customerList.indexOf(customerList.get(index));
 
             if (index == -1) {
-                System.err.println("not found");
-            } else if (index < customerList.size()) {
+                System.out.println("not found index");
+            } else {
                 System.out.print("Enter the update full name: ");
                 String fullName = scanner.nextLine();
                 customerList.get(index).setFullName(fullName);
@@ -86,12 +86,11 @@ public class CustomerServiceImpl implements CustomerService {
                 String address = scanner.nextLine();
                 customerList.get(index).setAddress(address);
                 customerList.set(index, customerList.get(index));
-                fileWriteRead.writeBuffer(customerList.get(index), "E:\\Duy Win\\Java- Fullstack\\Intellij\\src\\case_study\\furama_resort\\data\\customer.csv");
+                System.out.println("update done ---------------------------------------------------------");
+                System.out.println(customerList.get(index));
             }
-            System.out.println("update done ---------------------------------------------------------");
-            System.out.print(customerList.get(index));
         }catch (Exception e){
-            System.err.println("Error");
+            System.out.println("Error");
         }
     }
 

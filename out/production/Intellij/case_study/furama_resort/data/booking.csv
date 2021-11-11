@@ -1,11 +1,2 @@
-B111,1,2,C1234,Room,year
-B12345,2,3,C4321,Villa,year
-B123456,3,4,C1234,House,year
-B111,4,5,C1234,Room,1star
-B222,5,6,C1234,House,1star
-B3333,6,7,C1234,House,1star
-B3333,6,7,C1234,House,1star
-B4444,7,8,C1234,House,1star
-B1111,8,9,C1234,Villa,1star
-B11111,8,9,C1234,Villa,1star
-B32323,8,9,C1234,Villa,1star
+B1234,1,2,C1234,Villa,hour
+B5678,2,3,C1234,House,hour

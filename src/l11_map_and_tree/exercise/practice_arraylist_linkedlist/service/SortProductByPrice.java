@@ -8,7 +8,7 @@ public class SortProductByPrice implements Comparator<Product> {
     @Override
     public int compare(Product o1, Product o2) {
 
-        double result = o1.getPrice() - o2.getPrice();
+        double result = o2.getPrice()- o1.getPrice();
         if (result > 0) {
             return 1;
         } else if (result < 0) {

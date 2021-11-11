@@ -6,6 +6,7 @@ import review.week5.common.FileWriteRead;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -24,7 +25,9 @@ public class MainController {
                 System.out.println("4. Search");
                 System.out.println("5. Read File .csv");
                 System.out.println("6. DisPlay list");
-                System.out.println("7. Exit");
+                System.out.println("7. Remove ");
+                System.out.println("8. Sort");
+                System.out.println("9. Exit");
                 System.out.print("Enter choice : ");
                 int choice = Integer.parseInt(scanner.nextLine());
                 switch (choice) {
@@ -61,6 +64,12 @@ public class MainController {
                         candidateService.showAll();
                         break;
                     case 7:
+                        candidateService.remove();
+                        break;
+                    case 8:
+                        candidateService.sort();
+                        break;
+                    case 9:
                         check = false;
                         break;
                 }
